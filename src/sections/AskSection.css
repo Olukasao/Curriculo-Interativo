@@ -1,0 +1,96 @@
+.ask-section {
+  padding-block: var(--s-7) var(--s-6);
+  border-top: 1px solid var(--rule);
+}
+.ask-section__title {
+  --w: 125;
+  font-size: clamp(2.6rem, 1rem + 7.4vw, 9.5rem);
+  white-space: nowrap;
+}
+.ask-section__body {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: var(--s-3);
+  margin-top: var(--s-4);
+}
+.ask-section__intro {
+  grid-column: 1 / span 4;
+  color: var(--ash);
+  max-width: 32ch;
+}
+.ask-section__form {
+  grid-column: 5 / span 8;
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  border-bottom: 1px solid var(--bone);
+  padding-bottom: 0.6rem;
+}
+.ask-section__caret {
+  width: 0.55rem;
+  height: 1.6rem;
+  background: var(--bone);
+  animation: caret 1.05s steps(1) infinite;
+  flex-shrink: 0;
+}
+.ask-section__form:focus-within .ask-section__caret {
+  animation: none;
+  opacity: 0;
+}
+.ask-section__form input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: 0;
+  color: var(--bone);
+  font: inherit;
+  font-size: var(--t-xl);
+  font-weight: 600;
+  font-variation-settings: "wdth" 90;
+  padding: 0.2rem 0;
+}
+.ask-section__form input::placeholder {
+  color: var(--smoke);
+}
+.ask-section__form input:focus-visible {
+  outline: none;
+}
+.ask-section__form:focus-within {
+  border-bottom-width: 2px;
+}
+.ask-section__suggestions {
+  grid-column: 5 / span 8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  font-size: var(--t-sm);
+  color: var(--ash);
+}
+.ask-section__suggestions button:hover,
+.ask-section__suggestions button:focus-visible {
+  color: var(--black);
+}
+
+@media (max-width: 899.98px) {
+  .ask-section__title {
+    white-space: normal;
+    font-size: clamp(2.6rem, 15vw, 5rem);
+    --w: 82;
+  }
+  .ask-section__intro,
+  .ask-section__form,
+  .ask-section__suggestions {
+    grid-column: 1 / -1;
+  }
+  .ask-section__form input {
+    font-size: var(--t-lg);
+  }
+  .ask-section__form .btn {
+    padding-inline: 0.8rem;
+  }
+  .ask-section__suggestions {
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+}

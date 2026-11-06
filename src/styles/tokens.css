@@ -1,0 +1,52 @@
+/*
+ * Lucas Soares — design tokens
+ *
+ * A black-walled gallery: the shell is strictly monochrome and the work brings the colour.
+ * The one graphic device is the selection — an inverted block, as in an editor's visual mode.
+ * One typeface, Archivo, whose width axis (62–125) carries the kinetic typography.
+ */
+:root {
+  /* colour */
+  --black: #000000;
+  --bone: #ededE8;
+  --ash: #8c8c88;
+  --smoke: #3a3a37;
+  --rule: #222220;
+  --lift: #0f0f0e;
+
+  /* type */
+  --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --wdth-tight: 68;
+  --wdth-normal: 100;
+  --wdth-wide: 125;
+
+  /* 1.25 scale for running text, fluid display sizes for type-as-image */
+  --t-xs: 0.8rem;
+  --t-sm: 0.9rem;
+  --t-md: 1.0625rem;
+  --t-lg: 1.375rem;
+  --t-xl: clamp(1.75rem, 1.2rem + 1.8vw, 2.75rem);
+  --t-2xl: clamp(2.5rem, 1.4rem + 4vw, 5rem);
+  --t-display: clamp(4.25rem, 1rem + 17vw, 21rem);
+  --t-chapter: clamp(3.25rem, 1rem + 10vw, 12rem);
+
+  /* space */
+  --gutter: clamp(1rem, 0.6rem + 1.6vw, 2.5rem);
+  --s-1: 0.5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 2.5rem;
+  --s-5: 4rem;
+  --s-6: clamp(5rem, 3rem + 7vw, 10rem);
+  --s-7: clamp(7rem, 4rem + 12vw, 16rem);
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --d-micro: 180ms;
+  --d-short: 420ms;
+  --d-base: 800ms;
+
+  --header-h: 4.25rem;
+  --measure: 34rem;
+}

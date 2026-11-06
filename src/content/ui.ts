@@ -1,0 +1,170 @@
+import type { L } from "./types";
+
+/** Interface copy. Content lives in the other content files. */
+export const ui = {
+  skip: { pt: "Pular para o conteúdo", en: "Skip to content" },
+  nav: {
+    work: { pt: "Projetos", en: "Work" },
+    experience: { pt: "Experiência", en: "Experience" },
+    ask: { pt: "Pergunte", en: "Ask" },
+    contact: { pt: "Contato", en: "Contact" },
+    resume: { pt: "Currículo", en: "Résumé" },
+    menu: { pt: "Menu", en: "Menu" },
+    close: { pt: "Fechar", en: "Close" },
+    home: { pt: "Início", en: "Home" },
+    switchTo: { pt: "Read in English", en: "Ler em português" },
+  },
+  intro: {
+    skip: { pt: "Pular intro", en: "Skip intro" },
+  },
+  hero: {
+    scroll: { pt: "Scroll to explore", en: "Scroll to explore" },
+    seeWork: { pt: "Ver projetos", en: "See the work" },
+    seeExperience: { pt: "Experiência", en: "Experience" },
+  },
+  manifesto: {
+    heading: { pt: "Code. Design. Intelligence.", en: "Code. Design. Intelligence." },
+    code: {
+      pt: "Sistemas completos, do banco de dados à interface. Node.js, Express, React, Electron, Linux — o que o problema pedir, publicado e mantido.",
+      en: "Complete systems, from database to interface. Node.js, Express, React, Electron, Linux — whatever the problem calls for, shipped and maintained.",
+    },
+    design: {
+      pt: "Identidade, campanha e movimento. O design decide o que um produto precisa comunicar antes da primeira linha de código.",
+      en: "Identity, campaign and motion. Design decides what a product has to communicate before the first line of code.",
+    },
+    intelligence: {
+      pt: "Modelos de linguagem e agentes dentro dos sistemas, não ao lado deles — automação para o trabalho que não precisa de uma pessoa.",
+      en: "Language models and agents inside the systems, not next to them — automation for the work that doesn't need a person.",
+    },
+  },
+  work: {
+    heading: { pt: "Selected work", en: "Selected work" },
+    open: { pt: "Abrir estudo de caso", en: "Open case study" },
+    caseStudy: { pt: "Estudo de caso completo", en: "Full case study" },
+    behanceCategory: { pt: "Arquivo / Design gráfico / Identidade / Campanhas", en: "Archive / Graphic design / Identity / Campaigns" },
+    behanceLine: {
+      pt: "O arquivo completo: identidades, campanhas, peças gráficas e motion.",
+      en: "The full archive: identities, campaigns, graphic pieces and motion.",
+    },
+    behanceOpen: { pt: "Abre behance.net/lucassoares205 em nova aba", en: "Opens behance.net/lucassoares205 in a new tab" },
+  },
+  workscape: {
+    schematic: {
+      pt: "Representação esquemática da interface. Gravações reais serão adicionadas.",
+      en: "Schematic of the interface. Real recordings will be added.",
+    },
+    stack: { pt: "Stack", en: "Stack" },
+    explore: { pt: "Explore os módulos", en: "Explore the modules" },
+    overview: { pt: "Visão geral", en: "Overview" },
+  },
+  acessanet: {
+    visit: { pt: "Visitar acessanet.com.br", en: "Visit acessanet.com.br" },
+    dragHint: { pt: "Arraste para o lado", en: "Swipe sideways" },
+  },
+  kollect: {
+    rule: { pt: "O mascote é intocável. Só o O de WORLD muda.", en: "The mascot is untouchable. Only the O in WORLD changes." },
+  },
+  lab: {
+    heading: { pt: "Creative Lab", en: "Creative Lab" },
+    intro: {
+      pt: "Motion, kinetic typography, campanhas e identidades. Passe o mouse para ver em movimento; clique para abrir.",
+      en: "Motion, kinetic typography, campaigns and identities. Hover to see it move; click to open.",
+    },
+    introTouch: {
+      pt: "Motion, kinetic typography, campanhas e identidades. Toque para abrir.",
+      en: "Motion, kinetic typography, campaigns and identities. Tap to open.",
+    },
+    all: { pt: "Tudo", en: "All" },
+    filter: { pt: "Filtrar por tipo", en: "Filter by type" },
+    toAdd: { pt: "Material a adicionar", en: "Material to be added" },
+    behance: { pt: "Mais no Behance", en: "More on Behance" },
+    client: { pt: "Cliente", en: "Client" },
+    relatedCase: { pt: "Ver estudo de caso", en: "See case study" },
+  },
+  expertise: {
+    heading: { pt: "Três universos", en: "Three universes" },
+    intro: {
+      pt: "O mesmo conjunto de pontos se reorganiza em cada área — a mesma pessoa, três formas de resolver.",
+      en: "The same set of points rearranges for each field — one person, three ways of solving.",
+    },
+  },
+  ask: {
+    heading: { pt: "Ask my portfolio", en: "Ask my portfolio" },
+    intro: {
+      pt: "Pergunte sobre projetos, tecnologias ou trajetória. As respostas vêm apenas do conteúdo deste site.",
+      en: "Ask about projects, technologies or career. Answers come only from this site's content.",
+    },
+    placeholder: { pt: "Pergunte algo sobre o Lucas…", en: "Ask something about Lucas…" },
+    send: { pt: "Perguntar", en: "Ask" },
+    you: { pt: "Você", en: "You" },
+    assistant: { pt: "Portfólio", en: "Portfolio" },
+    thinking: { pt: "Procurando no portfólio", en: "Searching the portfolio" },
+    demo: {
+      pt: "Modo demonstração: respostas montadas a partir do conteúdo do site, sem modelo de linguagem.",
+      en: "Demo mode: answers assembled from the site's content, without a language model.",
+    },
+    llm: { pt: "Respostas geradas por IA a partir do conteúdo do site.", en: "AI-generated answers grounded in the site's content." },
+    clear: { pt: "Nova conversa", en: "New conversation" },
+    open: { pt: "Pergunte ao portfólio", en: "Ask the portfolio" },
+    related: { pt: "Ver no site", en: "See on the site" },
+    tooLong: { pt: "Use até 500 caracteres.", en: "Keep it under 500 characters." },
+    rateLimited: {
+      pt: "Muitas perguntas em pouco tempo. Tente novamente em alguns minutos.",
+      en: "Too many questions in a short time. Try again in a few minutes.",
+    },
+    suggestions: [
+      { pt: "Quais sistemas Lucas desenvolveu?", en: "Which systems has Lucas built?" },
+      { pt: "Qual é a experiência dele com inteligência artificial?", en: "What is his experience with AI?" },
+      { pt: "Ele trabalha com desenvolvimento backend?", en: "Does he do backend development?" },
+      { pt: "Mostre os projetos de motion design.", en: "Show me the motion design work." },
+      { pt: "Quais tecnologias ele domina?", en: "Which technologies does he know?" },
+      { pt: "Qual foi sua participação no Workscape?", en: "What was his role in Workscape?" },
+    ] as L[],
+  },
+  about: {
+    heading: { pt: "Sobre", en: "About" },
+    statement: {
+      pt: "O design decide o que um sistema precisa dizer. A engenharia garante que ele diga.",
+      en: "Design decides what a system has to say. Engineering makes sure it says it.",
+    },
+    education: { pt: "Formação", en: "Education" },
+    languages: { pt: "Idiomas", en: "Languages" },
+    experience: { pt: "Experiência", en: "Experience" },
+  },
+  contact: {
+    line1: { pt: "Have a project in mind?", en: "Have a project in mind?" },
+    line2: { pt: "Let's build something remarkable.", en: "Let's build something remarkable." },
+    email: { pt: "E-mail", en: "Email" },
+    copy: { pt: "Copiar", en: "Copy" },
+    copied: { pt: "Copiado", en: "Copied" },
+    resume: { pt: "Currículo em PDF", en: "Résumé (PDF)" },
+    toConfigure: { pt: "a configurar", en: "to configure" },
+    top: { pt: "Voltar ao topo", en: "Back to top" },
+  },
+  caseStudy: {
+    problem: { pt: "Problema", en: "Problem" },
+    solution: { pt: "Solução", en: "Solution" },
+    role: { pt: "Participação", en: "Role" },
+    tech: { pt: "Tecnologias", en: "Technologies" },
+    category: { pt: "Categoria", en: "Category" },
+    features: { pt: "Funcionalidades", en: "Features" },
+    gallery: { pt: "Galeria", en: "Gallery" },
+    links: { pt: "Links", en: "Links" },
+    next: { pt: "Próximo projeto", en: "Next project" },
+    watch: { pt: "Assistir com som", en: "Watch with sound" },
+    back: { pt: "Todos os projetos", en: "All projects" },
+    demo: { pt: "Demonstração interativa", en: "Interactive demo" },
+  },
+  resume: {
+    print: { pt: "Salvar como PDF", en: "Save as PDF" },
+    back: { pt: "Voltar ao site", en: "Back to the site" },
+    summary: { pt: "Resumo", en: "Summary" },
+    skills: { pt: "Competências", en: "Skills" },
+    projects: { pt: "Projetos", en: "Projects" },
+  },
+  notFound: {
+    title: { pt: "Página não encontrada", en: "Page not found" },
+    body: { pt: "Este endereço não existe. Volte para o início.", en: "This address doesn't exist. Head back home." },
+  },
+  placeholder: { pt: "Substituir", en: "Replace" },
+} as const;

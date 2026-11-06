@@ -1,0 +1,254 @@
+@import "./tokens.css";
+
+/* Registered so the width axis can be transitioned in CSS as well as tweened by GSAP. */
+@property --w {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 100;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: clip;
+  background: var(--black);
+  color: var(--bone);
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  font-family: var(--font);
+  font-size: var(--t-md);
+  line-height: 1.55;
+  font-variation-settings: "wdth" 100;
+  overflow-x: clip;
+}
+
+html.intro-pending body {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+img,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--bone);
+  color: var(--black);
+}
+
+:focus-visible {
+  outline: 2px solid var(--bone);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  left: var(--gutter);
+  top: 0.75rem;
+  z-index: 1000;
+  padding: 0.6rem 1rem;
+  background: var(--bone);
+  color: var(--black);
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: none;
+}
+
+/* ─── layout primitives ───────────────────────────────────────────── */
+.wrap {
+  padding-inline: var(--gutter);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+
+/* Running text */
+.prose {
+  max-width: var(--measure);
+  color: var(--bone);
+}
+.prose p + p {
+  margin-top: 1em;
+}
+.muted {
+  color: var(--ash);
+}
+
+/* Small label: sentence case, quiet, used only where it encodes structure. */
+.label {
+  font-size: var(--t-sm);
+  color: var(--ash);
+  font-variation-settings: "wdth" 100;
+  letter-spacing: 0.01em;
+}
+
+/* Display type. Width is a variable the motion system tweens. */
+.display {
+  --w: 100;
+  font-variation-settings: "wdth" var(--w);
+  font-weight: 800;
+  line-height: 0.84;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* Masked line for reveal animations */
+.line-mask {
+  display: block;
+  overflow: clip;
+  padding-block: 0.14em 0.06em;
+  margin-block: -0.14em -0.06em;
+}
+.line-mask > * {
+  display: block;
+}
+
+/* Text link with the selection device */
+.sel-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.1em 0.2em;
+  margin: -0.1em -0.2em;
+  isolation: isolate;
+}
+.sel-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bone);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--d-short) var(--ease-out);
+  z-index: -1;
+}
+.sel-link:hover,
+.sel-link:focus-visible {
+  color: var(--black);
+}
+.sel-link:hover::before,
+.sel-link:focus-visible::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.sel-link {
+  transition: color var(--d-micro) linear;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid var(--smoke);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  transition:
+    background var(--d-micro) linear,
+    color var(--d-micro) linear,
+    border-color var(--d-micro) linear;
+}
+.btn:hover,
+.btn:focus-visible {
+  background: var(--bone);
+  border-color: var(--bone);
+  color: var(--black);
+}
+.btn--solid {
+  background: var(--bone);
+  color: var(--black);
+  border-color: var(--bone);
+}
+.btn--solid:hover,
+.btn--solid:focus-visible {
+  background: transparent;
+  color: var(--bone);
+}
+
+.section {
+  position: relative;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

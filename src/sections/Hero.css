@@ -1,0 +1,132 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: minmax(0, 1fr);
+  padding-top: calc(var(--header-h) + var(--s-3));
+  padding-bottom: var(--s-4);
+}
+
+.hero__name {
+  align-self: center;
+  font-size: var(--t-display);
+  display: flex;
+  flex-direction: column;
+}
+.hero__line {
+  --w-rest: 92;
+  --w: var(--w-rest);
+  white-space: nowrap;
+  will-change: transform;
+}
+.hero__l2 {
+  align-self: flex-end;
+}
+
+.hero__meta {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: var(--s-3);
+  align-items: end;
+}
+.hero__role {
+  grid-column: 1 / span 3;
+  font-size: var(--t-lg);
+  font-weight: 600;
+  font-variation-settings: "wdth" 110;
+  line-height: 1.15;
+  max-width: 16ch;
+}
+.hero__intro {
+  grid-column: 4 / span 4;
+  color: var(--ash);
+  max-width: 38ch;
+}
+.hero__cta {
+  grid-column: 8 / span 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+}
+
+.hero__scroll {
+  grid-column: 11 / span 2;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--t-xs);
+  color: var(--ash);
+  white-space: nowrap;
+}
+.hero__scroll-line {
+  width: 1px;
+  height: 2.75rem;
+  background: var(--smoke);
+  position: relative;
+  overflow: hidden;
+}
+.hero__scroll-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bone);
+  transform: translateY(-100%);
+  animation: scroll-cue 2.2s var(--ease-in-out) infinite;
+}
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .hero__role {
+    grid-column: 1 / span 4;
+  }
+  .hero__intro {
+    grid-column: 5 / span 5;
+  }
+  .hero__cta {
+    grid-column: 1 / span 8;
+  }
+  .hero__scroll {
+    grid-column: 9 / span 4;
+  }
+}
+
+@media (max-width: 899.98px) {
+  .hero {
+    padding-bottom: var(--s-5);
+  }
+  .hero__name {
+    font-size: clamp(3.25rem, 21vw, 10rem);
+    align-self: end;
+    margin-bottom: var(--s-4);
+  }
+  .hero__line {
+    --w-rest: 70;
+  }
+  .hero__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--s-2);
+  }
+  .hero__cta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero__cta .btn {
+    justify-content: center;
+  }
+  .hero__scroll {
+    display: none;
+  }
+}

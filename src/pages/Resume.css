@@ -1,0 +1,151 @@
+.cv-shell {
+  min-height: 100vh;
+  background: #e6e6e1;
+  color: #111;
+  padding-bottom: var(--s-5);
+}
+.cv-shell ::selection {
+  background: #000;
+  color: #fff;
+}
+.cv-shell :focus-visible {
+  outline-color: #000;
+}
+
+.cv-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-2);
+  padding: 0.75rem var(--gutter);
+  background: #e6e6e1;
+}
+.cv-toolbar__right {
+  display: flex;
+  gap: 0.5rem;
+}
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #111;
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: #111;
+}
+.cv-btn:hover,
+.cv-btn--solid {
+  background: #111;
+  color: #fff;
+}
+.cv-btn--solid:hover {
+  background: transparent;
+  color: #111;
+}
+
+.cv {
+  width: min(210mm, calc(100vw - 2 * var(--gutter)));
+  margin: var(--s-2) auto 0;
+  padding: clamp(1.25rem, 5vw, 18mm);
+  background: #fff;
+  font-size: 10.5pt;
+  line-height: 1.45;
+  box-shadow: 0 1px 0 #ccc;
+}
+.cv__name {
+  font-size: clamp(2.2rem, 7vw, 40pt);
+  font-weight: 800;
+  font-variation-settings: "wdth" 80;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+.cv__roles {
+  margin-top: 0.4rem;
+  font-weight: 600;
+  font-variation-settings: "wdth" 105;
+}
+.cv__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.2rem;
+  margin-top: 0.6rem;
+  font-size: 9.5pt;
+  color: #444;
+}
+.cv__contacts a:hover {
+  text-decoration: underline;
+}
+
+.cv__section {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1rem;
+  padding-top: 0.9rem;
+  margin-top: 0.9rem;
+  border-top: 1px solid #111;
+  break-inside: avoid;
+}
+.cv__section h2 {
+  font-size: 9.5pt;
+  font-weight: 700;
+}
+.cv__entries {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.cv__entries article {
+  break-inside: avoid;
+}
+.cv__entries h3 {
+  font-size: 10.5pt;
+  font-weight: 700;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.6rem;
+}
+.cv__entries h3 span {
+  font-weight: 400;
+  color: #444;
+}
+.cv__tech {
+  color: #555;
+  font-size: 9pt;
+}
+
+@media (max-width: 599.98px) {
+  .cv__section {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  html,
+  body,
+  .cv-shell {
+    background: #fff !important;
+  }
+  .cv-toolbar,
+  .skip-link,
+  .ask-launcher {
+    display: none !important;
+  }
+  .cv {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  a {
+    color: inherit;
+  }
+}

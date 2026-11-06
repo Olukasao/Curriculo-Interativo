@@ -1,0 +1,29 @@
+.ask-launcher {
+  position: fixed;
+  right: var(--gutter);
+  bottom: calc(var(--gutter) + env(safe-area-inset-bottom));
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--bone);
+  color: var(--black);
+  font-size: var(--t-sm);
+  font-weight: 600;
+  transform: translateY(calc(100% + 5rem));
+  transition: transform var(--d-base) var(--ease-out);
+}
+.ask-launcher.is-shown {
+  transform: none;
+}
+.ask-launcher__caret {
+  width: 0.45rem;
+  height: 1.05rem;
+  background: var(--black);
+  animation: caret 1.05s steps(1) infinite;
+}
+.ask-launcher:hover .ask-launcher__caret {
+  animation: none;
+}

@@ -1,0 +1,90 @@
+.manifesto__pin {
+  position: relative;
+  isolation: isolate;
+}
+
+.manifesto__word {
+  --w: 104;
+  display: inline-block;
+  font-size: var(--t-chapter);
+  color: var(--smoke);
+  white-space: nowrap;
+}
+.manifesto__word-wrap {
+  position: relative;
+  display: inline-block;
+}
+.manifesto__text {
+  font-size: var(--t-lg);
+  line-height: 1.35;
+  max-width: 26ch;
+}
+
+/* Selection block: inverts the words it lands on. */
+.manifesto__sel,
+.manifesto__item-sel {
+  position: absolute;
+  background: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+.manifesto__item-sel {
+  inset: -0.02em -0.06em;
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+.manifesto__sel {
+  display: none;
+}
+
+/* Desktop: one pinned frame; the words stack at left, the sentences share one slot at right. */
+@media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .manifesto__pin {
+    height: 100svh;
+    display: flex;
+    align-items: center;
+  }
+  .manifesto__list {
+    width: 100%;
+  }
+  .manifesto__word {
+    font-size: min(var(--t-chapter), 8.4vw);
+  }
+  .manifesto__item-sel {
+    display: none;
+  }
+  .manifesto__sel {
+    display: block;
+  }
+  .manifesto__text {
+    position: absolute;
+    right: var(--gutter);
+    bottom: var(--s-6);
+    width: min(22rem, 24vw);
+  }
+}
+
+/* Mobile and reduced motion: a plain sequence. */
+@media (max-width: 899.98px), (prefers-reduced-motion: reduce) {
+  .manifesto {
+    padding-block: var(--s-6);
+  }
+  .manifesto__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-5);
+  }
+  .manifesto__word {
+    font-size: clamp(2.2rem, 10.5vw, 6rem);
+    --w: 76;
+  }
+  .manifesto__text {
+    margin-top: var(--s-2);
+    color: var(--ash);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .manifesto__word {
+    color: var(--bone);
+  }
+}

@@ -1,0 +1,42 @@
+.ws-demo__stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: radial-gradient(70% 70% at 50% 50%, #0b0d16, #000 75%);
+  border: 1px solid var(--rule);
+}
+.ws-demo__controls {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: var(--gutter);
+  margin-top: var(--s-3);
+  align-items: start;
+}
+.ws-demo__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.ws-demo__buttons button {
+  min-height: 2.5rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--smoke);
+  font-size: var(--t-sm);
+}
+.ws-demo__buttons button[aria-pressed="true"] {
+  background: var(--bone);
+  color: var(--black);
+  border-color: var(--bone);
+}
+.ws-demo__caption {
+  color: var(--ash);
+  font-size: var(--t-sm);
+}
+@media (max-width: 899.98px) {
+  .ws-demo__stage {
+    aspect-ratio: 4 / 3;
+  }
+  .ws-demo__controls {
+    grid-template-columns: 1fr;
+  }
+}

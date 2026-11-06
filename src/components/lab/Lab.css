@@ -1,0 +1,209 @@
+.lab__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: var(--s-4);
+}
+.lab__filters button {
+  min-height: 2.5rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--smoke);
+  font-size: var(--t-sm);
+  transition:
+    background var(--d-micro) linear,
+    color var(--d-micro) linear,
+    border-color var(--d-micro) linear;
+}
+.lab__filters sup {
+  margin-left: 0.3em;
+  font-size: 0.7em;
+  color: var(--ash);
+}
+.lab__filters button:hover {
+  border-color: var(--bone);
+}
+.lab__filters button[aria-pressed="true"] {
+  background: var(--bone);
+  color: var(--black);
+  border-color: var(--bone);
+}
+.lab__filters button[aria-pressed="true"] sup {
+  color: inherit;
+}
+
+.lab__grid {
+  columns: 3;
+  column-gap: var(--gutter);
+}
+.lab__cell {
+  break-inside: avoid;
+  margin-bottom: var(--s-4);
+  animation: lab-in var(--d-base) var(--ease-out) both;
+}
+@keyframes lab-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+.lab-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.lab-card__media {
+  display: block;
+  overflow: hidden;
+}
+.lab-card__media .media {
+  transition: transform var(--d-base) var(--ease-out);
+}
+.lab-card:hover .lab-card__media .media,
+.lab-card:focus-visible .lab-card__media .media {
+  transform: scale(1.025);
+}
+.lab-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 0.75rem;
+}
+.lab-card__title {
+  font-weight: 700;
+  font-variation-settings: "wdth" 100;
+  transition: font-variation-settings var(--d-short) var(--ease-out);
+}
+.lab-card:hover .lab-card__title {
+  font-variation-settings: "wdth" 118;
+}
+.lab-card__meta {
+  font-size: var(--t-sm);
+  color: var(--ash);
+}
+
+@media (max-width: 1099.98px) {
+  .lab__grid {
+    columns: 2;
+  }
+}
+@media (max-width: 479.98px) {
+  .lab__grid {
+    column-gap: 0.75rem;
+  }
+  .lab__cell {
+    margin-bottom: var(--s-3);
+  }
+  .lab-card__meta {
+    font-size: var(--t-xs);
+  }
+}
+
+/* ─── viewer ─────────────────────────────────────────────────────── */
+.lab-viewer {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--black);
+  color: var(--bone);
+}
+.lab-viewer::backdrop {
+  background: #000;
+}
+.lab-viewer[open] {
+  animation: viewer-in var(--d-short) var(--ease-out);
+}
+@keyframes viewer-in {
+  from {
+    opacity: 0;
+  }
+}
+.lab-viewer__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  height: 100%;
+}
+.lab-viewer__stage {
+  display: grid;
+  place-items: center;
+  padding: var(--s-4);
+  min-height: 0;
+}
+.lab-viewer__stage .media {
+  max-height: calc(100dvh - 2 * var(--s-4));
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  background: transparent;
+}
+.lab-viewer__stage .media > video,
+.lab-viewer__stage .media > img {
+  object-fit: contain;
+}
+.lab-viewer__info {
+  border-left: 1px solid var(--rule);
+  padding: var(--s-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  overflow-y: auto;
+}
+.lab-viewer__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-sm);
+}
+.lab-viewer__close {
+  margin-left: auto;
+}
+.lab-viewer__title {
+  font-size: var(--t-xl);
+  font-weight: 800;
+  font-variation-settings: "wdth" 80;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+.lab-viewer__facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 1rem;
+  font-size: var(--t-sm);
+}
+.lab-viewer__facts dt {
+  color: var(--ash);
+}
+.lab-viewer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+  margin-top: auto;
+}
+
+@media (max-width: 899.98px) {
+  .lab-viewer__inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow-y: auto;
+  }
+  .lab-viewer__stage {
+    padding: 0;
+  }
+  .lab-viewer__stage .media {
+    height: auto;
+    width: 100%;
+    max-height: 70dvh;
+  }
+  .lab-viewer__info {
+    border-left: 0;
+    order: -1;
+    padding-bottom: var(--s-2);
+  }
+  .lab-viewer__info > :not(.lab-viewer__nav) {
+    order: 2;
+  }
+}

@@ -1,0 +1,129 @@
+.an-chapter {
+  background: linear-gradient(var(--black), var(--field) 18%, var(--field) 82%, var(--black));
+}
+
+.an-track {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 4rem);
+  padding-inline: var(--gutter);
+}
+.an-track:focus-visible {
+  outline-offset: -4px;
+}
+
+.an-panel {
+  flex-shrink: 0;
+  position: relative;
+}
+.an-panel figcaption,
+.an-tall figcaption {
+  margin-top: 0.8rem;
+  font-size: var(--t-sm);
+  color: var(--ash);
+  max-width: 48ch;
+}
+
+.an-title {
+  --w: 84;
+  font-size: clamp(3rem, 1rem + 5.6vw, 8rem);
+  margin-block: 0.4rem var(--s-3);
+}
+.an-lede {
+  max-width: 34ch;
+  font-size: var(--t-lg);
+  line-height: 1.35;
+}
+.an-hint {
+  margin-top: var(--s-4);
+}
+
+.an-panel--duo {
+  display: flex;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.an-panel--end {
+  max-width: 28rem;
+}
+.an-panel--end p {
+  color: var(--ash);
+  margin-bottom: var(--s-3);
+}
+.an-end__title {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+.an-end__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+}
+
+/* ─── Desktop: pinned horizontal track ───────────────────────────── */
+@media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .an-pin {
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .an-track {
+    padding-top: var(--header-h);
+  }
+  .an-panel--intro {
+    width: max-content;
+    max-width: 46vw;
+    padding-right: var(--s-4);
+  }
+  .an-panel--hero {
+    width: calc(68svh * 16 / 9);
+  }
+  .an-panel--wide {
+    width: calc(56svh * 16 / 9);
+  }
+  .an-tall {
+    width: calc(68svh * 9 / 16);
+  }
+}
+
+/* ─── Touch / reduced motion: swipe carousel ─────────────────────── */
+@media (max-width: 899.98px), (prefers-reduced-motion: reduce) {
+  .an-chapter {
+    padding-block: var(--s-6);
+  }
+  .an-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    overscroll-behavior-x: contain;
+    align-items: flex-start;
+    padding-bottom: var(--s-2);
+    scrollbar-width: none;
+  }
+  .an-track::-webkit-scrollbar {
+    display: none;
+  }
+  .an-panel {
+    scroll-snap-align: start;
+  }
+  .an-panel--intro {
+    width: min(85vw, 30rem);
+  }
+  .an-title {
+    font-size: clamp(2.4rem, 12vw, 6rem);
+    --w: 76;
+  }
+  .an-panel--hero,
+  .an-panel--wide {
+    width: 85vw;
+  }
+  .an-tall {
+    width: min(60vw, 18rem);
+  }
+  .an-panel--end {
+    width: 85vw;
+  }
+}

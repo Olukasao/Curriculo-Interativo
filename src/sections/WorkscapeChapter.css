@@ -1,0 +1,163 @@
+.ws-chapter {
+  background: var(--black);
+}
+
+.ws-stage {
+  position: relative;
+  overflow: hidden;
+}
+.ws-tilt {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.ws-caption__title {
+  --w: 96;
+  font-size: clamp(3rem, 1rem + 4.4vw, 6.5rem);
+  margin-top: 0.4rem;
+}
+.ws-caption__line {
+  margin-top: var(--s-2);
+  color: var(--ash);
+  max-width: 30ch;
+}
+.ws-step__title {
+  font-size: var(--t-lg);
+  font-weight: 700;
+  font-variation-settings: "wdth" 100;
+  line-height: 1.15;
+}
+.ws-step__body {
+  margin-top: 0.4rem;
+  color: var(--ash);
+  max-width: 34ch;
+}
+.ws-caption__count {
+  font-size: var(--t-sm);
+  color: var(--ash);
+  font-variant-numeric: tabular-nums;
+}
+.ws-note {
+  font-size: var(--t-xs);
+  color: var(--smoke);
+}
+
+/* ─── Desktop: pinned camera ─────────────────────────────────────── */
+@media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .ws-chapter__pin {
+    position: relative;
+    height: 100svh;
+  }
+  .ws-stage {
+    position: absolute;
+    inset: 0;
+    /* A pool of light under the floating interface. */
+    background: radial-gradient(60% 55% at 62% 55%, #0b0d16 0%, #000 70%);
+  }
+  .ws-caption {
+    position: absolute;
+    inset: calc(var(--header-h) + var(--s-3)) auto var(--s-4) 0;
+    width: min(30rem, 36vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+  .ws-caption a {
+    pointer-events: auto;
+  }
+  .ws-caption::before {
+    content: "";
+    position: absolute;
+    inset: calc(-1 * (var(--header-h) + var(--s-3))) -40% calc(-1 * var(--s-4)) 0;
+    background: linear-gradient(90deg, #000 0%, #000 55%, rgb(0 0 0 / 0) 100%);
+    z-index: -1;
+  }
+  .ws-steps {
+    position: relative;
+    min-height: 9rem;
+  }
+  .ws-step {
+    position: absolute;
+    inset: auto 0 0 0;
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity var(--d-short) var(--ease-out),
+      transform var(--d-short) var(--ease-out);
+  }
+  .ws-step.is-active {
+    opacity: 1;
+    transform: none;
+  }
+  .ws-caption__foot {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    margin-top: var(--s-3);
+  }
+  .ws-note {
+    position: absolute;
+    right: var(--gutter);
+    bottom: var(--s-2);
+  }
+}
+
+/* ─── Mobile & reduced motion: docked screen, module list ───────── */
+@media (max-width: 899.98px), (prefers-reduced-motion: reduce) {
+  .ws-chapter {
+    padding-block: var(--s-6);
+  }
+  .ws-chapter__pin {
+    display: flex;
+    flex-direction: column;
+  }
+  .ws-stage {
+    order: 2;
+    position: sticky;
+    top: var(--header-h);
+    z-index: 2;
+    aspect-ratio: 16 / 10;
+    margin-inline: var(--gutter);
+    background: var(--black);
+  }
+  .ws-caption {
+    display: contents;
+  }
+  .ws-caption__intro {
+    order: 1;
+    padding-inline: var(--gutter);
+    margin-bottom: var(--s-4);
+  }
+  .ws-caption__title {
+    font-size: clamp(2.6rem, 13vw, 6rem);
+    --w: 76;
+  }
+  .ws-steps {
+    order: 3;
+    padding-inline: var(--gutter);
+    display: flex;
+    flex-direction: column;
+  }
+  .ws-step {
+    padding-block: var(--s-4);
+    border-top: 1px solid var(--rule);
+    opacity: 0.45;
+    transition: opacity var(--d-short) linear;
+  }
+  .ws-step.is-active {
+    opacity: 1;
+  }
+  .ws-caption__foot {
+    order: 4;
+    padding-inline: var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ws-note {
+    order: 5;
+    padding: var(--s-2) var(--gutter) 0;
+  }
+}
