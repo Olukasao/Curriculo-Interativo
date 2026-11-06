@@ -24,7 +24,7 @@ Without `ANTHROPIC_API_KEY` the assistant runs in **demo mode**: answers are ass
 
 | Route | What |
 |---|---|
-| `/` | Intro, hero, manifesto, work index, Workscape (pinned camera), AcessaNet (horizontal), Creative Lab (gallery + viewer), Kollect, Expertise (Three.js), Ask, About + timeline, Contact |
+| `/` | Intro, hero, manifesto, work index, Workscape (pinned camera), AcessaNet (horizontal), Creative Lab (gallery + viewer), Image manipulation (before/after slider + Kollect series), Kollect, Expertise (Three.js), Ask, About + timeline, Contact |
 | `/work/:slug` | Case study: problem, solution, role, tech, features, gallery, interactive Workscape schematic |
 | `/cv` | Traditional résumé generated from the same data; "Save as PDF" prints an A4 page |
 
@@ -40,6 +40,7 @@ Everything visible lives in `src/content/` — components never hold copy.
 | `experience.ts` | Timeline entries (add `period` once confirmed) |
 | `projects.ts` | Case studies + `workscapeModules` |
 | `lab.ts` | Creative Lab pieces |
+| `manipulation.ts` | Image manipulation: before/after pairs and Kollect series (images from Behance, in `public/media/manipulation/`) |
 | `expertise.ts` | The three universes |
 | `ui.ts` | Interface copy (PT/EN) |
 

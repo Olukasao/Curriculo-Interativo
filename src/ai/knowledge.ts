@@ -5,6 +5,7 @@
 import { experience } from "../content/experience";
 import { universes } from "../content/expertise";
 import { lab } from "../content/lab";
+import { comparisons, series } from "../content/manipulation";
 import { links, profile } from "../content/profile";
 import { projects } from "../content/projects";
 import type { L } from "../content/types";
@@ -209,6 +210,22 @@ function buildChunks(): Chunk[] {
     },
     href: "/#lab",
     tags: ["motion", "design"],
+  });
+
+  chunks.push({
+    id: "manipulation",
+    title: { pt: "Manipulação de imagem", en: "Image manipulation" },
+    text: {
+      pt: "Projetos de manipulação de imagem (composição e retoque): " +
+        comparisons.map((c) => `${c.title}${c.client ? ` (${c.client})` : ""} — ${c.note.pt}`).join(" ") +
+        " Séries para a Kollect: " + series.map((s) => `${s.title.pt} (${s.count} imagens)`).join(", ") + ".",
+      en: "Image manipulation projects (compositing and retouch): " +
+        comparisons.map((c) => `${c.title}${c.client ? ` (${c.client})` : ""} — ${c.note.en}`).join(" ") +
+        " Series for Kollect: " + series.map((s) => `${s.title.en} (${s.count} images)`).join(", ") + ".",
+    },
+    href: "/#manipulacao",
+    tags: ["design", "manipulation"],
+    keywords: ["manipulacao", "manipulation", "photoshop", "composicao", "compositing", "retoque", "retouch", "fotomontagem"],
   });
 
   const contact = [

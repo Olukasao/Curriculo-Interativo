@@ -20,6 +20,7 @@ const CONCEPTS: Record<string, string[]> = {
   contact: ["contato", "contact", "email", "e-mail", "linkedin", "github", "behance", "falar", "reach", "hire", "contratar"],
   education: ["formacao", "education", "faculdade", "universidade", "university", "estudou", "studied", "graduacao", "degree", "curso"],
   languages: ["idioma", "idiomas", "ingles", "english", "espanhol", "spanish", "language", "languages", "fala", "speak"],
+  manipulation: ["manipulacao", "manipulation", "photoshop", "composicao", "compositing", "retoque", "retouch", "fotomontagem", "imagem", "imagens"],
   who: ["quem", "who", "sobre", "about", "apresente", "introduce", "perfil", "profile"],
   engineering: ["engenharia", "engineering", "fullstack", "full-stack", "frontend", "front-end", "react", "javascript"],
   workscape: ["workscape", "participacao", "role", "papel"],

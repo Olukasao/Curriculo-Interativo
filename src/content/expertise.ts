@@ -56,6 +56,7 @@ export const universes: Universe[] = [
     skills: [
       { name: "Graphic Design" },
       { name: "Motion Design" },
+      { name: "Image Manipulation" },
       { name: "Branding" },
       { name: "Visual Identity" },
       { name: "Vector Art" },

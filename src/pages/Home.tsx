@@ -10,6 +10,7 @@ import { Hero } from "../sections/Hero";
 import { Intro, introWillPlay } from "../sections/Intro";
 import { KollectChapter } from "../sections/KollectChapter";
 import { Manifesto } from "../sections/Manifesto";
+import { Manipulation } from "../sections/Manipulation";
 import { WorkIndex } from "../sections/WorkIndex";
 import { WorkscapeChapter } from "../sections/WorkscapeChapter";
 
@@ -32,6 +33,7 @@ export default function Home() {
         <WorkscapeChapter />
         <AcessaNetChapter />
         <CreativeLab />
+        <Manipulation />
         <KollectChapter />
         <Expertise />
         <AskSection />

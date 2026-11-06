@@ -81,6 +81,26 @@ export const ui = {
     client: { pt: "Cliente", en: "Client" },
     relatedCase: { pt: "Ver estudo de caso", en: "See case study" },
   },
+  manipulation: {
+    label: { pt: "Manipulação / Composição / Retoque", en: "Manipulation / Compositing / Retouch" },
+    heading: { pt: "Manipulação de imagem", en: "Image manipulation" },
+    intro: {
+      pt: "Várias imagens de origem, uma cena que nunca existiu. Arraste a linha para ver de onde cada composição veio.",
+      en: "Several source images, one scene that never existed. Drag the line to see where each composite came from.",
+    },
+    final: { pt: "Final", en: "Final" },
+    slider: { pt: "Comparar fontes e imagem final", en: "Compare sources and final image" },
+    pieces: { pt: "Peças", en: "Pieces" },
+    seriesHeading: { pt: "Séries Kollect", en: "Kollect series" },
+    seriesIntro: {
+      pt: "Colecionáveis fotografados e levados para dentro dos seus universos.",
+      en: "Collectibles photographed and carried into their own universes.",
+    },
+    onBehance: { pt: "Ver no Behance", en: "See on Behance" },
+    open: { pt: "Ampliar imagem", en: "Enlarge image" },
+    prev: { pt: "Anterior", en: "Previous" },
+    next: { pt: "Próxima", en: "Next" },
+  },
   expertise: {
     heading: { pt: "Três universos", en: "Three universes" },
     intro: {
