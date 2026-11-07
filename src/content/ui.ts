@@ -6,6 +6,7 @@ export const ui = {
   nav: {
     work: { pt: "Projetos", en: "Work" },
     experience: { pt: "Experiência", en: "Experience" },
+    demos: { pt: "Demos", en: "Demos" },
     ask: { pt: "Pergunte", en: "Ask" },
     contact: { pt: "Contato", en: "Contact" },
     resume: { pt: "Currículo", en: "Résumé" },
@@ -48,6 +49,39 @@ export const ui = {
     },
     behanceOpen: { pt: "Abre behance.net/lucassoares205 em nova aba", en: "Opens behance.net/lucassoares205 in a new tab" },
   },
+  demos: {
+    heading: { pt: "Funcionando agora", en: "Running now" },
+    intro: {
+      pt: "Projetos rodando de verdade no navegador, com dados fictícios. Clique, digite, navegue.",
+      en: "Projects really running in the browser, with fictional data. Click, type, explore.",
+    },
+    open: { pt: "Abrir", en: "Open" },
+    chat: {
+      kind: { pt: "Projeto próprio", en: "Standalone project" },
+      title: { pt: "Chat interno", en: "Internal chat" },
+      line: { pt: "O chat da intranet: conversas, grupos, arquivos e reações, com respostas simuladas ao vivo.", en: "The intranet chat: conversations, groups, files and reactions, with live simulated replies." },
+    },
+    agenda: {
+      kind: { pt: "Projeto próprio", en: "Standalone project" },
+      title: { pt: "Agenda de técnicos", en: "Technician schedule" },
+      line: { pt: "O painel NOC da agenda: grade por técnico, coordenador de rotas com mapa, chamados e horários.", en: "The schedule NOC panel: per-technician grid, route coordinator with map, tickets and shifts." },
+    },
+    workscape: {
+      kind: { pt: "Aplicativo corporativo", en: "Business app" },
+      title: { pt: "Workscape", en: "Workscape" },
+      line: { pt: "Chat, agenda de técnicos, painel NOC e assistente de IA.", en: "Chat, technician schedule, NOC dashboard and AI assistant." },
+    },
+    site: {
+      kind: { pt: "Site", en: "Website" },
+      title: { pt: "Site AcessaNet", en: "AcessaNet website" },
+      line: { pt: "O site do provedor, com a Terra 3D, planos, cobertura e Central do Assinante.", en: "The ISP website, with the 3D Earth, plans, coverage and subscriber portal." },
+    },
+    app: {
+      kind: { pt: "App Android", en: "Android app" },
+      title: { pt: "Central do Assinante", en: "Subscriber app" },
+      line: { pt: "O app do cliente: fatura, plano, chamados e atendimento, num quadro de celular.", en: "The customer app: bill, plan, tickets and support, in a phone frame." },
+    },
+  },
   workscape: {
     schematic: {
       pt: "Representação esquemática da interface. Gravações reais serão adicionadas.",
@@ -56,9 +90,22 @@ export const ui = {
     stack: { pt: "Stack", en: "Stack" },
     explore: { pt: "Explore os módulos", en: "Explore the modules" },
     overview: { pt: "Visão geral", en: "Overview" },
+    liveCta: { pt: "Abrir o Workscape funcionando", en: "Open Workscape running" },
+    liveTitle: { pt: "Workscape — demonstração ao vivo", en: "Workscape — live demo" },
+    liveBack: { pt: "Voltar ao projeto", en: "Back to the project" },
+    liveNote: {
+      pt: "O front-end real do Workscape, com dados e servidor simulados. Entre com o acesso já preenchido.",
+      en: "The real Workscape front end, with simulated data and server. Sign in with the prefilled access.",
+    },
+    liveOpen: { pt: "Abrir em tela cheia ↗", en: "Open full screen ↗" },
+    liveNarrow: {
+      pt: "O Workscape é um app de desktop: a demonstração funciona melhor em uma tela maior.",
+      en: "Workscape is a desktop app: the demo works best on a larger screen.",
+    },
   },
   acessanet: {
     visit: { pt: "Visitar acessanet.com.br", en: "Visit acessanet.com.br" },
+    liveCta: { pt: "Ver o site e o app funcionando", en: "See the site and app running" },
     dragHint: { pt: "Arraste para o lado", en: "Swipe sideways" },
   },
   kollect: {

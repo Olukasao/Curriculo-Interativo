@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BVQXJMCF.js";import{Dt as t,Ot as n,Tt as r,rr as i,vt as a}from"./index-BUYWp2Fn.js";var o=e();function s({kind:e}){return n()?(0,o.jsxs)(a,{variant:`outline`,size:`sm`,onClick:()=>t(e),title:`Abre ${r[e].titulo} em uma janela separada, que pode ficar em outro monitor`,children:[(0,o.jsx)(i,{size:15}),` Destacar`]}):null}export{s as t};

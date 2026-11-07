@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BVQXJMCF.js";import t from"./PurchaseRequests-BkVaMskv.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`requester`})}export{r as default};

@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { links as contactLinks } from "../content/profile";
 import { ui } from "../content/ui";
 import { useI18n } from "../lib/i18n";
 import { useScroller } from "../lib/smoothScroll";
@@ -42,6 +43,9 @@ export function Header() {
       <SectionLink to="#work" className="sel-link" onNavigate={close}>
         {t(ui.nav.work)}
       </SectionLink>
+      <SectionLink to="#demos" className="sel-link" onNavigate={close}>
+        {t(ui.nav.demos)}
+      </SectionLink>
       <SectionLink to="#experience" className="sel-link" onNavigate={close}>
         {t(ui.nav.experience)}
       </SectionLink>
@@ -73,9 +77,15 @@ export function Header() {
         </nav>
 
         <div className="site-header__actions">
-          <Link to="/cv" className="site-header__cv">
-            {t(ui.nav.resume)}
-          </Link>
+          {contactLinks.resumePdf ? (
+            <a href={contactLinks.resumePdf} className="site-header__cv" target="_blank" rel="noreferrer">
+              {t(ui.nav.resume)}
+            </a>
+          ) : (
+            <Link to="/cv" className="site-header__cv">
+              {t(ui.nav.resume)}
+            </Link>
+          )}
           <button
             type="button"
             className="site-header__lang"
@@ -107,9 +117,15 @@ export function Header() {
       <div id={menuId} className="site-menu" hidden={!open}>
         <nav className="site-menu__links wrap" aria-label="Menu">
           {links}
-          <Link to="/cv" className="sel-link" onClick={close}>
-            {t(ui.nav.resume)}
-          </Link>
+          {contactLinks.resumePdf ? (
+            <a href={contactLinks.resumePdf} className="sel-link" target="_blank" rel="noreferrer" onClick={close}>
+              {t(ui.nav.resume)}
+            </a>
+          ) : (
+            <Link to="/cv" className="sel-link" onClick={close}>
+              {t(ui.nav.resume)}
+            </Link>
+          )}
         </nav>
       </div>
     </header>

@@ -1,0 +1,73 @@
+diff --git a/src/app/App.tsx b/src/app/App.tsx
+index 24703ab..5af4d7b 100644
+--- a/src/app/App.tsx
++++ b/src/app/App.tsx
+@@ -104,7 +104,7 @@ const Workspaces = lazy(() => import("../modules/Workspaces"));
+ const Assistente = lazy(() => import("../modules/Assistente"));
+ const Tools = lazy(() => import("../modules/Tools"));
+ const query = new QueryClient({
+-  defaultOptions: { queries: { retry: 1, refetchOnWindowFocus: true } },
++  defaultOptions: { queries: { retry: 1, refetchOnWindowFocus: true, ...(import.meta.env.VITE_DEMO ? { structuralSharing: false } : {}) } },
+ });
+ /** Avisos internos obrigatórios: valem em qualquer tela do Workspace, mesmo sem ter aberto o Chat. */
+ function AvisosInternos() {
+diff --git a/src/main.tsx b/src/main.tsx
+index 3c28ca9..463aa79 100644
+--- a/src/main.tsx
++++ b/src/main.tsx
+@@ -1,3 +1,4 @@
++import './demo/preseed';
+ import { createRoot } from 'react-dom/client';
+ import '@fontsource-variable/sora';
+ import '@fontsource-variable/manrope';
+diff --git a/src/modules/Login.tsx b/src/modules/Login.tsx
+index 2ed450e..70f49e6 100644
+--- a/src/modules/Login.tsx
++++ b/src/modules/Login.tsx
+@@ -36,8 +36,8 @@ export default function Login() {
+     config = useServers((s) => s.config),
+     { setSession, setEntrando } = useSession();
+   const ultimo = useRef(lerUltimo()).current;
+-  const [email, setEmail] = useState(ultimo?.email || ""),
+-    [password, setPassword] = useState(""),
++  const [email, setEmail] = useState(import.meta.env.VITE_DEMO ? "demo@workscape.app" : ultimo?.email || ""),
++    [password, setPassword] = useState(import.meta.env.VITE_DEMO ? "demo1234" : ""),
+     [error, setError] = useState(""),
+     [expirou] = useState(sessaoExpirou),
+     [fase, setFase] = useState<Fase>("pronto"),
+diff --git a/src/services/api.ts b/src/services/api.ts
+index 368bc7f..16d960d 100644
+--- a/src/services/api.ts
++++ b/src/services/api.ts
+@@ -2,6 +2,7 @@ import axios, { AxiosError, type InternalAxiosRequestConfig } from "axios";
+ import { useSession, useServers } from "../stores/workspace";
+ import { tokenAindaValido } from "./agendaWebSessao";
+ import { serviceEndpoint } from "./live";
++import { demoAdapter } from "../demo/mock";
+ import type { serviceNames } from "../../electron/policy";
+ type Service = (typeof serviceNames)[number];
+ export const clients = Object.fromEntries(
+@@ -15,11 +16,12 @@ export const clients = Object.fromEntries(
+       if (token) config.headers.set("Authorization", `Bearer ${token}`);
+       // Escritas da agenda levam a sessão do Chat Interno, que identifica o usuário nos registros (como no app antigo).
+       let agendaSession: string | undefined;
+-      if (service === "agenda" && (config.method || "get").toLowerCase() !== "get") {
++      if (!import.meta.env.VITE_DEMO && service === "agenda" && (config.method || "get").toLowerCase() !== "get") {
+         agendaSession = await agendaSessionToken();
+         if (!window.desktop) config.headers.set("x-agenda-session", agendaSession);
+       }
+-      if (window.desktop)
++      if (import.meta.env.VITE_DEMO) config.adapter = demoAdapter;
++      else if (window.desktop)
+         config.adapter = async (c) =>
+           desktopAdapter(c, service as Service, token, agendaSession);
+       return config;
+diff --git a/src/stores/workspace.ts b/src/stores/workspace.ts
+index 8a9f838..64d7ec0 100644
+--- a/src/stores/workspace.ts
++++ b/src/stores/workspace.ts
+@@ -1,3 +1,4 @@
++import "../demo/preseed";
+ import type { FundoEscolhido } from "../services/fundoUsuario";
+ import { create } from "zustand";
+ import { persist } from "zustand/middleware";

@@ -106,7 +106,10 @@ export function AcessaNetChapter() {
             <h3 className="an-end__title">{t(ui.caseStudy.role)}</h3>
             <p>{t(project.role)}</p>
             <div className="an-end__links">
-              <Link to="/work/acessanet" className="btn btn--solid">
+              <Link to="/work/acessanet/live" className="btn btn--solid">
+                {t(ui.acessanet.liveCta)}
+              </Link>
+              <Link to="/work/acessanet" className="btn">
                 {t(ui.work.caseStudy)}
               </Link>
               <a href="https://acessanet.com.br" target="_blank" rel="noreferrer" className="btn">

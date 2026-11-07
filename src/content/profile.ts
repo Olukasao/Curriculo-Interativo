@@ -9,8 +9,7 @@ export const links = {
   /** From the résumé PDF (github.com/Olukasao). */
   github: "https://github.com/Olukasao" as string | null,
   behance: "https://www.behance.net/lucassoares205" as string | null,
-  /** TODO: add the LinkedIn profile URL. */
-  linkedin: null as string | null,
+  linkedin: "https://www.linkedin.com/in/lucas-soares-gon%C3%A7alves-/" as string | null,
   /** From the 2025 résumé PDF. TODO: confirm this is the address to publish. */
   email: "lukasao.11@hotmail.com" as string | null,
   /**

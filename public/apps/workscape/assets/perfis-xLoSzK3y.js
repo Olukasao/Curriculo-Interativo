@@ -1,0 +1,1 @@
+var e=`admin`,t=`admin_comercial`,n=`usuario`,r=[e,t,n],i={[e]:`Administrador`,[t]:`Admin Comercial`,[n]:`Usuário`},a=e=>i[e]||e||i.usuario,o=(e={})=>e?.perfil===`admin`||e?.perfil===`admin_comercial`;export{o as a,a as i,t as n,r,e as t};

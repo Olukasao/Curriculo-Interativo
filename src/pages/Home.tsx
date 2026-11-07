@@ -8,6 +8,7 @@ import { CreativeLab } from "../sections/CreativeLab";
 import { Expertise } from "../sections/Expertise";
 import { Hero } from "../sections/Hero";
 import { Intro, introWillPlay } from "../sections/Intro";
+import { LiveDemos } from "../sections/LiveDemos";
 import { KollectChapter } from "../sections/KollectChapter";
 import { Manifesto } from "../sections/Manifesto";
 import { Manipulation } from "../sections/Manipulation";
@@ -30,6 +31,7 @@ export default function Home() {
         <Hero ready={heroReady} />
         <Manifesto />
         <WorkIndex />
+        <LiveDemos />
         <WorkscapeChapter />
         <AcessaNetChapter />
         <CreativeLab />

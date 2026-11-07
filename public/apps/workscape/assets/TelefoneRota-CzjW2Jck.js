@@ -1,0 +1,1 @@
+import{a as e,n as t,t as n}from"./jsx-runtime-BVQXJMCF.js";import{et as r,kr as i}from"./index-BUYWp2Fn.js";var a=e(t(),1),o=n();function s(){let e=r(e=>e.abrir);return(0,a.useEffect)(()=>e(),[e]),(0,o.jsx)(i,{to:`/tools`,replace:!0})}export{s as default};

@@ -73,7 +73,14 @@ function CaseStudyView({ slug }: { slug: string }) {
 
       <div className="case__hero-media wrap">
         {demoAsHero ? (
-          <WorkscapeDemo />
+          <>
+            <WorkscapeDemo />
+            <p>
+              <Link to="/work/workscape/live" className="btn btn--solid">
+                {t(ui.workscape.liveCta)}
+              </Link>
+            </p>
+          </>
         ) : withSound && project.hero.kind === "video" ? (
           <Media media={project.hero} mode="full" eager />
         ) : (
@@ -147,6 +154,14 @@ function CaseStudyView({ slug }: { slug: string }) {
               <li key={f.pt}>{t(f)}</li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {slug === "acessanet" && (
+        <section className="case__demo wrap">
+          <Link to="/work/acessanet/live" className="btn btn--solid">
+            {t(ui.acessanet.liveCta)}
+          </Link>
         </section>
       )}
 

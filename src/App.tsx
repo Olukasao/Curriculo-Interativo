@@ -10,6 +10,7 @@ import { useScroller } from "./lib/smoothScroll";
 import Home from "./pages/Home";
 
 const CaseStudy = lazy(() => import("./pages/CaseStudy"));
+const ProjectLive = lazy(() => import("./pages/ProjectLive"));
 const Resume = lazy(() => import("./pages/Resume"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -32,7 +33,7 @@ export default function App() {
   const { t } = useI18n();
   const { pathname } = useLocation();
   useRouteScroll();
-  const bare = pathname === "/cv";
+  const bare = pathname === "/cv" || /^\/work\/[^/]+\/live$/.test(pathname);
 
   return (
     <AskProvider>
@@ -43,12 +44,13 @@ export default function App() {
       <Suspense fallback={<div style={{ minHeight: "100vh" }} />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/work/:slug/live" element={<ProjectLive />} />
           <Route path="/work/:slug" element={<CaseStudy />} />
           <Route path="/cv" element={<Resume />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
-      <AskLauncher />
+      {!pathname.endsWith("/live") && <AskLauncher />}
     </AskProvider>
   );
 }

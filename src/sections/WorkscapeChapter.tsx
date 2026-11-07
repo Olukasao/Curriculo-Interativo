@@ -131,6 +131,9 @@ export function WorkscapeChapter() {
             <p className="ws-caption__count" aria-hidden="true">
               {String(index).padStart(2, "0")} / {String(workscapeModules.length).padStart(2, "0")}
             </p>
+            <Link to="/work/workscape/live" className="btn btn--solid">
+              {t(ui.workscape.liveCta)}
+            </Link>
             <Link to="/work/workscape" className="btn">
               {t(ui.work.caseStudy)}
             </Link>
