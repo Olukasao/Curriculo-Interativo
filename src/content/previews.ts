@@ -40,12 +40,19 @@ export const previews: Record<string, Preview> = {
       {
         id: "app",
         label: { pt: "App Android", en: "Android app" },
-        src: "/apps/acessanet-app/index.html?auto",
+        src: "/apps/acessanet-app/index.html?logout#/cliente",
         phone: true,
         note: {
-          pt: "A Central do Assinante do app Android, no navegador e em modo demonstração (sem dados de clientes).",
-          en: "The Android subscriber app running in the browser in demo mode (no customer data).",
+          pt: "A Central do Assinante do app Android, começando no login (CPF e senha já preenchidos). Faturas, chamados e avisos são fictícios.",
+          en: "The Android subscriber app, starting at the sign-in (CPF and password prefilled). Bills, tickets and notices are fictional.",
         },
+      },
+      {
+        id: "app-logado",
+        label: { pt: "App (já logado)", en: "App (signed in)" },
+        src: "/apps/acessanet-app/index.html?auto",
+        phone: true,
+        note: { pt: "O mesmo app, já dentro da conta de demonstração.", en: "The same app, already inside the demo account." },
       },
     ],
   },
@@ -53,6 +60,18 @@ export const previews: Record<string, Preview> = {
     title: { pt: "Chat interno — demonstração ao vivo", en: "Internal chat — live demo" },
     back: "/#demos",
     views: [
+      {
+        id: "login",
+        label: { pt: "Login", en: "Sign in" },
+        src: "/apps/chat-interno/index.html?logout#/login",
+        note: { pt: "Tela de login real do chat. O acesso já vem preenchido: é só entrar.", en: "The chat's real sign-in screen. Access is prefilled: just sign in." },
+      },
+      {
+        id: "intranet",
+        label: { pt: "Intranet e acessos rápidos", en: "Intranet and quick access" },
+        src: "/apps/chat-interno/index.html?auto#/",
+        note: { pt: "Página inicial da intranet, com Meu Acesso Rápido e todos os acessos por categoria.", en: "The intranet home, with My Quick Access and every shortcut by category." },
+      },
       {
         id: "chat",
         label: { pt: "Conversa direta", en: "Direct chat" },
@@ -68,12 +87,6 @@ export const previews: Record<string, Preview> = {
         src: "/apps/chat-interno/index.html?auto#/chat?grupo=201",
         note: { pt: "Grupo com imagens, arquivos, links e reações. Escreva algo e veja alguém responder.", en: "Group with images, files, links and reactions. Write something and watch someone reply." },
       },
-      {
-        id: "intranet",
-        label: { pt: "Intranet", en: "Intranet" },
-        src: "/apps/chat-interno/index.html?auto#/",
-        note: { pt: "A página inicial da intranet que envolve o chat.", en: "The intranet home page that wraps the chat." },
-      },
     ],
   },
   "agenda-tecnicos": {
@@ -82,12 +95,18 @@ export const previews: Record<string, Preview> = {
     views: [
       {
         id: "agenda",
-        label: { pt: "Agenda de técnicos", en: "Technician schedule" },
+        label: { pt: "Com login", en: "With sign-in" },
         src: "/apps/agenda-tecnicos/index.html",
         note: {
-          pt: "O painel NOC da agenda (projeto próprio) com dados fictícios: agenda, coordenador de rota, mapa de chamados e horários.",
-          en: "The schedule NOC panel (its own project) with fictional data: schedule, route coordinator, tickets map and shifts.",
+          pt: "O painel NOC da agenda (projeto próprio): entre pela tela de login e veja 12 técnicos, almoços, pausas, equipes e ausências.",
+          en: "The schedule NOC panel (its own project): sign in, then see 12 technicians, lunches, breaks, teams and absences.",
         },
+      },
+      {
+        id: "direto",
+        label: { pt: "Direto na agenda", en: "Straight to the schedule" },
+        src: "/apps/agenda-tecnicos/index.html?auto",
+        note: { pt: "Mesma agenda, sem passar pelo login.", en: "Same schedule, skipping the sign-in." },
       },
     ],
   },

@@ -6,7 +6,7 @@ Duas builds estáticas embutidas no portfólio em `public/apps/`:
 - `acessanet-app/`: repositório AcessaNet-App-Android (a Central do Assinante), que importa o código do site via alias `@site`.
 
 Nenhum dado real: a Central tem um modo demonstração embutido (CPF 123.456.789-09) que responde tudo no navegador,
-e a API é apontada para `api.demo.invalid` nas duas builds. O app abre já logado com `?auto`.
+e a API é apontada para `api.demo.invalid` nas duas builds. O app abre no login (`?logout`) com CPF/senha preenchidos, ou já logado com `?auto`. `app.demo-extra.js` (vai em `app/src/demo-extra.js`) acrescenta faturas, chamados e avisos fictícios à Central.
 
 ## Refazer
 ```bash

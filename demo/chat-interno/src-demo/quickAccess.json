@@ -1,0 +1,308 @@
+[
+ {
+  "id": "sgp",
+  "label": "SGP",
+  "icon": "◎",
+  "type": "external",
+  "target": "https://sgp.demo.invalid/admin/",
+  "sort_order": 10
+ },
+ {
+  "id": "precadastro",
+  "label": "Pré-cadastro",
+  "subtitle": "Pessoa física ou pessoa jurídica, no SGP",
+  "icon": "PC",
+  "type": "menu",
+  "sort_order": 12,
+  "children": [
+   {
+    "id": "precadastro-pf",
+    "label": "Pessoa física",
+    "icon": "F",
+    "type": "external",
+    "target": "https://sgp.demo.invalid/public/precadastro/F/"
+   },
+   {
+    "id": "precadastro-pj",
+    "label": "Pessoa jurídica",
+    "icon": "J",
+    "type": "external",
+    "target": "https://sgp.demo.invalid/public/precadastro/J/"
+   }
+  ]
+ },
+ {
+  "id": "olt-cloud",
+  "label": "OLT Cloud",
+  "icon": "☁",
+  "type": "external",
+  "target": "https://olt.demo.invalid/",
+  "sort_order": 20
+ },
+ {
+  "id": "dashboards",
+  "label": "Dashboards",
+  "icon": "▥",
+  "type": "external",
+  "target": "https://servidor.demo.invalid/",
+  "sort_order": 30
+ },
+ {
+  "id": "monitoramento-total",
+  "label": "Monitoramento Total",
+  "subtitle": "",
+  "icon": "MT",
+  "type": "internal",
+  "target": "/monitoramento-total",
+  "sort_order": 35
+ },
+ {
+  "id": "teste-conectividade-sites",
+  "label": "Teste de Conectividade",
+  "icon": "🌐",
+  "type": "internal",
+  "target": "/teste-conectividade-sites",
+  "sort_order": 37
+ },
+ {
+  "id": "diagnostico-conexao-cliente",
+  "label": "Diagnóstico de Conexão",
+  "subtitle": "Consulta conexão, consumo atual e histórico do cliente",
+  "icon": "DC",
+  "type": "internal",
+  "target": "/diagnostico-conexao-cliente",
+  "sort_order": 38
+ },
+ {
+  "id": "agenda",
+  "label": "Agenda",
+  "icon": "▣",
+  "type": "menu",
+  "sort_order": 40,
+  "children": [
+   {
+    "id": "agenda-tecnicos",
+    "label": "Agenda técnicos",
+    "icon": "T",
+    "type": "external",
+    "target": "/apps/agenda-tecnicos/index.html"
+   },
+   {
+    "id": "agenda-instalacao",
+    "label": "Agenda instalação",
+    "icon": "I",
+    "type": "external",
+    "target": "/apps/agenda-tecnicos/index.html"
+   }
+  ]
+ },
+ {
+  "id": "busca-global",
+  "label": "Busca Global",
+  "icon": "⌕",
+  "type": "internal",
+  "target": "/busca-global",
+  "sort_order": 45
+ },
+ {
+  "id": "controle-operacional",
+  "label": "Controle Operacional",
+  "subtitle": "Auditoria, eventos críticos e histórico da operação",
+  "icon": "CO",
+  "type": "internal",
+  "target": "/controle-operacional",
+  "sort_order": 47
+ },
+ {
+  "id": "solicitacoes-internas",
+  "label": "Chamados",
+  "icon": "CH",
+  "type": "internal",
+  "target": "/solicitacoes-internas",
+  "sort_order": 48
+ },
+ {
+  "id": "vendas",
+  "label": "Vendas",
+  "icon": "V",
+  "type": "internal",
+  "target": "/acesso-rapido/vendas",
+  "sort_order": 50
+ },
+ {
+  "id": "falhas-gerais",
+  "label": "Falhas Gerais",
+  "icon": "!",
+  "type": "internal",
+  "target": "/acesso-rapido/falhas-gerais",
+  "sort_order": 50
+ },
+ {
+  "id": "imagens",
+  "label": "Imagens",
+  "subtitle": "Imagens compartilhadas pela administração",
+  "icon": "IM",
+  "type": "internal",
+  "target": "/imagens",
+  "sort_order": 50
+ },
+ {
+  "id": "notas-rapidas",
+  "label": "Notas Rápidas",
+  "icon": "✎",
+  "type": "internal",
+  "target": "/notas-rapidas",
+  "sort_order": 50
+ },
+ {
+  "id": "procedimentos-financeiro",
+  "label": "Procedimentos de financeiro",
+  "icon": "Tx",
+  "type": "internal",
+  "target": "/textos-atendimento",
+  "sort_order": 60
+ },
+ {
+  "id": "boas-praticas-atendimento",
+  "label": "Boas Práticas de Atendimento",
+  "icon": "BP",
+  "type": "internal",
+  "target": "/boas-praticas-atendimento",
+  "sort_order": 65
+ },
+ {
+  "id": "plantao-domingo",
+  "label": "Plantão domingo",
+  "icon": "D",
+  "type": "internal",
+  "target": "/plantao-domingo",
+  "sort_order": 70
+ },
+ {
+  "id": "boas-praticas-duvidas",
+  "label": "Dúvidas Respondidas",
+  "icon": "?",
+  "type": "internal",
+  "target": "/boas-praticas-duvidas",
+  "sort_order": 80
+ },
+ {
+  "id": "efeitos-sonoros",
+  "label": "Efeitos Sonoros",
+  "subtitle": "Disparo remoto de efeitos para usuários online",
+  "icon": "♪",
+  "type": "internal",
+  "target": "/acesso-rapido/efeitos-sonoros",
+  "sort_order": 82,
+  "requires_sound_effect_permission": true
+ },
+ {
+  "id": "calculadoras-intranet",
+  "label": "Calculadoras",
+  "icon": "∑",
+  "type": "menu",
+  "sort_order": 88,
+  "children": [
+   {
+    "id": "calculadora-internet-dedicada",
+    "label": "Calculadora Internet Dedicada",
+    "icon": "LD",
+    "type": "modal",
+    "target": "calculadora-link-dedicado"
+   },
+   {
+    "id": "calculadora-semi-dedicado",
+    "label": "Calculadora Semi Dedicado",
+    "icon": "SD",
+    "type": "modal",
+    "target": "calculadora-semi-dedicado"
+   },
+   {
+    "id": "calculadora-acordo",
+    "label": "Calculadora de Acordo",
+    "icon": "R$",
+    "type": "internal",
+    "target": "/acesso-rapido/calculadora-acordo"
+   },
+   {
+    "id": "calculadora-troca-plano",
+    "label": "Calculadora de Troca de Plano",
+    "icon": "TP",
+    "type": "modal",
+    "target": "calculadora-troca-plano"
+   }
+  ]
+ },
+ {
+  "id": "calculadora-internet-dedicada",
+  "label": "Calculadora Internet Dedicada",
+  "icon": "LD",
+  "type": "modal",
+  "target": "calculadora-link-dedicado",
+  "sort_order": 90
+ },
+ {
+  "id": "calculadora-semi-dedicado",
+  "label": "Calculadora Semi Dedicado",
+  "icon": "SD",
+  "type": "modal",
+  "target": "calculadora-semi-dedicado",
+  "sort_order": 95
+ },
+ {
+  "id": "calculadora-acordo",
+  "label": "Calculadora de Acordo",
+  "icon": "R$",
+  "type": "internal",
+  "target": "/acesso-rapido/calculadora-acordo",
+  "sort_order": 97
+ },
+ {
+  "id": "calculadora-troca-plano",
+  "label": "Calculadora de Troca de Plano",
+  "icon": "TP",
+  "type": "modal",
+  "target": "calculadora-troca-plano",
+  "sort_order": 98
+ },
+ {
+  "id": "assinaturas-email",
+  "label": "Assinaturas de e-mail",
+  "icon": "@",
+  "type": "internal",
+  "target": "/assinaturas-email",
+  "sort_order": 100
+ },
+ {
+  "id": "mundiale",
+  "label": "Mundialle",
+  "icon": "M",
+  "type": "external",
+  "target": "https://oauth2.withub.ai/realms/withub/protocol/openid-connect/auth?client_id=authz&redirect_uri=https://account.withub.ai/server/oauth&scope=openid%20profile%20email&response_type=code&response_mode=form_post&state=vvscyus3hq&nonce=1mhxdefhn61",
+  "sort_order": 110
+ },
+ {
+  "id": "grafana",
+  "label": "Grafana",
+  "icon": "▤",
+  "type": "external",
+  "target": "http://192.168.1.160:3000/login",
+  "sort_order": 120
+ },
+ {
+  "id": "zabbix",
+  "label": "Zabbix",
+  "icon": "▧",
+  "type": "external",
+  "target": "http://192.168.1.160/zabbix.php?action=dashboard.view&dashboardid=1",
+  "sort_order": 130
+ },
+ {
+  "id": "microsip",
+  "label": "Telefone",
+  "icon": "☎",
+  "type": "protocol",
+  "target": "tel:",
+  "sort_order": 140
+ }
+]

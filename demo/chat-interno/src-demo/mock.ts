@@ -1,5 +1,6 @@
 import type { AxiosAdapter, InternalAxiosRequestConfig } from "axios";
 import * as f from "./fixtures";
+import quickAccessCatalog from "./quickAccess.json";
 import * as g from "./fixtures2";
 import * as h from "./fixtures3";
 
@@ -7,6 +8,13 @@ type Ctx = { path: string; method: string; params: Record<string, string>; body:
 type Handler = (c: Ctx) => unknown;
 
 let nextId = 5000;
+// Acessos rápidos: o catálogo real do servidor (rótulos, ícones, destinos) com os links externos neutralizados.
+const catalogo = quickAccessCatalog as any[];
+let selecionados = ["sgp", "agenda", "solicitacoes-internas", "busca-global", "olt-cloud", "dashboards", "notas-rapidas", "falhas-gerais", "vendas", "boas-praticas-duvidas"];
+const qa = () => ({
+  available: catalogo,
+  selected: selecionados.map((id) => catalogo.find((i) => i.id === id)).filter(Boolean),
+});
 const extra = {
   direta: {} as Record<number, any[]>,
   grupo: {} as Record<number, any[]>,
@@ -18,7 +26,10 @@ const extra = {
 const routes: [string, RegExp, Handler][] = [
   ["POST", /^\/login$/, () => ({ token: "demo-token", user: f.me })],
   ["GET", /^\/me$/, () => f.me],
-  ["GET", /^\/me\/quick-access$/, () => ({ available: [], items: [] })],
+  ["GET", /^\/me\/quick-access$/, () => qa()],
+  ["POST", /^\/me\/quick-access$/, ({ body }) => { if (!selecionados.includes(body.quick_access_id)) selecionados.push(body.quick_access_id); return qa(); }],
+  ["PUT", /^\/me\/quick-access\/order$/, ({ body }) => { selecionados = [...(body.quick_access_ids || selecionados)]; return qa(); }],
+  ["DELETE", /^\/me\/quick-access\/([^/]+)$/, ({ match }) => { selecionados = selecionados.filter((id) => id !== match[1]); return qa(); }],
   ["GET", /^\/chat\/usuarios$/, () => f.usuarios],
   ["GET", /^\/chat\/conversas-diretas$/, () => f.conversas],
   ["GET", /^\/chat\/grupos$/, () => f.grupos],

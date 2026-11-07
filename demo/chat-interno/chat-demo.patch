@@ -7,6 +7,21 @@ index 2cd0c17..b8f7df9 100644
  import React from "react";
  import ReactDOM from "react-dom/client";
  import App from "./App";
+diff --git a/frontend/src/pages/Login.jsx b/frontend/src/pages/Login.jsx
+index df1b3d3..2c65521 100644
+--- a/frontend/src/pages/Login.jsx
++++ b/frontend/src/pages/Login.jsx
+@@ -75,8 +75,8 @@ const MotionP = motion.p;
+ const MotionButton = motion.button;
+ 
+ export default function Login() {
+-    const [email, setEmail] = useState("");
+-    const [password, setPassword] = useState("");
++    const [email, setEmail] = useState(import.meta.env.VITE_DEMO ? "demo@nexa.example" : "");
++    const [password, setPassword] = useState(import.meta.env.VITE_DEMO ? "demo1234" : "");
+     const [mostrarSenha, setMostrarSenha] = useState(false);
+     const [capsLockAtivo, setCapsLockAtivo] = useState(false);
+     const [erro, setErro] = useState("");
 diff --git a/frontend/src/services/api.js b/frontend/src/services/api.js
 index adceca5..4e3289e 100644
 --- a/frontend/src/services/api.js
