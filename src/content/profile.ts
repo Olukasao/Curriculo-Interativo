@@ -17,7 +17,7 @@ export const links = {
    * Optional static PDF in /public/cv/. When null, "Download PDF" prints the
    * always-current résumé page at /cv instead.
    */
-  resumePdf: null as string | null,
+  resumePdf: "/cv/Lucas_Soares_Curriculo_2026.pdf" as string | null,
 };
 
 export const profile = {
