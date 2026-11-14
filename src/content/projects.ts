@@ -254,6 +254,61 @@ export const projects: Project[] = [
     ],
     keywords: ["kollect", "colecionáveis", "collectibles", "marca", "brand", "branding", "identidade", "identity", "mascote", "direção criativa"],
   },
+  {
+    slug: "workspace-3d",
+    index: "05",
+    title: "Workspace 3D",
+    category: { pt: "Produto web / Escritório virtual / 2D e 3D", en: "Web product / Virtual office / 2D and 3D" },
+    line: {
+      pt: "A planta do escritório vira interface operacional: um mapa vivo, em 3D ou em 2D, com quem está em cada mesa.",
+      en: "The office floor plan becomes an operational interface: a live map, in 3D or 2D, showing who is at each desk.",
+    },
+    summary: {
+      pt: "Workspace 3D transforma a planta do escritório em uma interface de trabalho. O administrador monta o andar num editor e publica; a equipe navega pelo mapa, clica numa mesa, impressora ou TV e vê quem está ali e o que dá para fazer. A empresa escolhe entre um escritório 3D ou um 2D em pixel art, e a troca chega a todos ao vivo.",
+      en: "Workspace 3D turns the office floor plan into a working interface. The admin builds the floor in an editor and publishes; the team navigates the map, clicks a desk, printer or TV and sees who is there and what can be done. The company picks a 3D office or a pixel-art 2D one, and the switch reaches everyone live.",
+    },
+    problem: {
+      pt: "Em empresas de atendimento, saber quem está em qual mesa, quem está em chamada e como falar com essa pessoa ou acessar o computador dela exige abrir várias ferramentas soltas.",
+      en: "In support companies, knowing who sits where, who is on a call and how to reach that person or their computer takes several disconnected tools.",
+    },
+    solution: {
+      pt: "Um só mapa como painel: cada colaborador tem um avatar sentado na própria mesa que mostra, ao vivo, se está online, digitando ou em atendimento. Dali saem o chat, o acesso remoto, a transferência de atendimento e a fila de impressão, com permissões por perfil e trilha de auditoria.",
+      en: "A single map as the dashboard: each person has an avatar seated at their own desk showing, live, whether they are online, typing or on a call. From there come chat, remote access, call transfer and the print queue, with per-role permissions and an audit trail.",
+    },
+    role: {
+      pt: "Produto, design e desenvolvimento completos: do editor 3D e do motor 2D ao servidor, à presença em tempo real, aos avatares e aos testes.",
+      en: "Complete product, design and development: from the 3D editor and the 2D engine to the server, real-time presence, avatars and tests.",
+    },
+    tech: ["React", "TypeScript", "Vite", "React Three Fiber", "Three.js", "Phaser", "Node.js", "Express", "SQLite", "MariaDB", "SSE", "Vitest", "Playwright"],
+    features: [
+      { pt: "Editor 3D do andar: pisos, paredes, portas, mobiliário, rascunho e publicação por revisão", en: "3D floor editor: floors, walls, doors, furniture, drafts and revision-based publishing" },
+      { pt: "Modo operacional: clique numa mesa, impressora ou TV para ver quem está ali e agir", en: "Operational mode: click a desk, printer or TV to see who is there and act" },
+      { pt: "Troca global entre 3D e 2D pelo administrador, ao vivo para todos, com um só motor gráfico carregado por vez", en: "Global 3D/2D switch by the admin, live for everyone, with a single graphics engine loaded at a time" },
+      { pt: "Escritório 2D em pixel art com movimento em tempo real validado pelo servidor", en: "Pixel-art 2D office with real-time movement validated by the server" },
+      { pt: "Avatares personalizados, sentados nas mesas, com presença ao vivo: online, digitando, em atendimento", en: "Customizable avatars seated at desks with live presence: online, typing, on a call" },
+      { pt: "Chat, acesso remoto, transferência de atendimento e fila de impressão, com adaptadores de demonstração", en: "Chat, remote access, call transfer and print queue, with demo adapters" },
+      { pt: "Perfis (administrador, operador, visualizador), isolamento entre empresas e trilha de auditoria", en: "Roles (admin, operator, viewer), company isolation and an audit trail" },
+      { pt: "SQLite local e MariaDB em produção, pelo mesmo código", en: "Local SQLite and production MariaDB from the same code" },
+      { pt: "146 testes automatizados e verificações em navegador real", en: "146 automated tests and real-browser checks" },
+    ],
+    tone: { ink: "#8AB4FF", field: "#060A14" },
+    hero: {
+      kind: "video",
+      slug: "workspace-3d-3d",
+      aspect: "16/9",
+      alt: { pt: "Workspace 3D no modo 3D: câmera orbitando o escritório com mesas, avatares sentados e a lista de postos", en: "Workspace 3D in 3D mode: the camera orbiting the office with desks, seated avatars and the station list" },
+    },
+    gallery: [
+      {
+        kind: "video",
+        slug: "workspace-3d-2d",
+        aspect: "16/9",
+        alt: { pt: "Workspace 3D no modo 2D em pixel art: a equipe nas mesas, andando pelo mapa e a TV do atendimento com a equipe ao vivo", en: "Workspace 3D in pixel-art 2D mode: the team at their desks, walking the map and the support TV showing the live team" },
+      },
+    ],
+    links: [{ label: { pt: "Código no GitHub", en: "Code on GitHub" }, href: "https://github.com/Olukasao/Workspace-3d" }],
+    keywords: ["workspace", "escritório virtual", "virtual office", "3d", "2d", "pixel art", "phaser", "react three fiber", "three.js", "presença", "presence", "avatar", "planta", "floor plan", "node", "express", "sqlite", "atendimento"],
+  },
 ];
 
 export const projectBySlug = (slug: string) => projects.find((p) => p.slug === slug);
