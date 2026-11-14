@@ -4,6 +4,7 @@ import { KollectLogo } from "../components/KollectLogo";
 import { LabGrid } from "../components/lab/LabGrid";
 import { Media } from "../components/Media";
 import { WorkscapeDemo } from "../components/workscape/WorkscapeDemo";
+import { previews } from "../content/previews";
 import { projectBySlug, projects } from "../content/projects";
 import { ui } from "../content/ui";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
@@ -11,6 +12,38 @@ import { useI18n } from "../lib/i18n";
 import { EASE, gsap, useGSAP } from "../lib/motion";
 import NotFound from "./NotFound";
 import "./CaseStudy.css";
+
+/** The real app, running in the hero (no recording): the office lives on its own, in 3D and in 2D. */
+function LiveHero({ hero }: { hero: Parameters<typeof Media>[0]["media"] }) {
+  const { t } = useI18n();
+  const preview = previews["workspace-3d"];
+  const [id, setId] = useState(preview.views[0].id);
+  const view = preview.views.find((v) => v.id === id) ?? preview.views[0];
+  return (
+    <div className="live-hero">
+      <div className="live-hero__bar">
+        <div className="live-hero__tabs" role="group" aria-label={t(preview.title)}>
+          {preview.views.map((v) => (
+            <button key={v.id} type="button" className="live-hero__tab" aria-pressed={v.id === view.id} onClick={() => setId(v.id)}>
+              {t(v.label)}
+            </button>
+          ))}
+        </div>
+        <a className="live-hero__open" href={view.src} target="_blank" rel="noreferrer">
+          {t(ui.workscape.liveOpen)}
+        </a>
+      </div>
+      <div className="live-hero__stage">
+        <iframe key={view.id} className="live-hero__frame" src={view.src} title={`${t(preview.title)} — ${t(view.label)}`} allow="clipboard-write" />
+      </div>
+      <p className="live-hero__note">{t(view.note)}</p>
+      <div className="live-hero__still">
+        <Media media={hero} mode="inview" eager />
+        <p className="live-hero__note">{t({ pt: "O Workspace 3D é um app de desktop: a demonstração viva funciona melhor numa tela maior.", en: "Workspace 3D is a desktop app: the live demo works best on a larger screen." })}</p>
+      </div>
+    </div>
+  );
+}
 
 export default function CaseStudy() {
   const { slug = "" } = useParams();
@@ -81,6 +114,8 @@ function CaseStudyView({ slug }: { slug: string }) {
               </Link>
             </p>
           </>
+        ) : slug === "workspace-3d" ? (
+          <LiveHero hero={project.hero} />
         ) : withSound && project.hero.kind === "video" ? (
           <Media media={project.hero} mode="full" eager />
         ) : (
