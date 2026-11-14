@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { KollectLogo } from "../components/KollectLogo";
 import { LabGrid } from "../components/lab/LabGrid";
@@ -18,23 +18,47 @@ function LiveHero({ hero }: { hero: Parameters<typeof Media>[0]["media"] }) {
   const { t } = useI18n();
   const preview = previews["workspace-3d"];
   const [id, setId] = useState(preview.views[0].id);
+  const [touched, setTouched] = useState(false);
   const view = preview.views.find((v) => v.id === id) ?? preview.views[0];
+  // the zoom wheel is off inside the embedded map: the app hands the wheel back so the page keeps scrolling
+  useEffect(() => {
+    const onMsg = (e: MessageEvent) => {
+      if (e.origin !== window.location.origin) return;
+      const dy = (e.data as { o3dWheel?: number } | null)?.o3dWheel;
+      if (typeof dy === "number") window.scrollBy({ top: dy });
+    };
+    window.addEventListener("message", onMsg);
+    return () => window.removeEventListener("message", onMsg);
+  }, []);
   return (
     <div className="live-hero">
       <div className="live-hero__bar">
-        <div className="live-hero__tabs" role="group" aria-label={t(preview.title)}>
-          {preview.views.map((v) => (
-            <button key={v.id} type="button" className="live-hero__tab" aria-pressed={v.id === view.id} onClick={() => setId(v.id)}>
-              {t(v.label)}
-            </button>
-          ))}
+        <div className="live-hero__switch">
+          <span className="live-hero__label label">{t({ pt: "Troque o ambiente", en: "Switch the environment" })}</span>
+          <div className="live-hero__tabs" role="group" aria-label={t(preview.title)}>
+            {preview.views.map((v) => (
+              <button
+                key={v.id}
+                type="button"
+                className={`live-hero__tab${!touched && v.id !== view.id ? " live-hero__tab--hint" : ""}`}
+                aria-pressed={v.id === view.id}
+                onClick={() => {
+                  setId(v.id);
+                  setTouched(true);
+                }}
+              >
+                {v.id.toUpperCase()}
+                <small>{t(v.label)}</small>
+              </button>
+            ))}
+          </div>
         </div>
         <a className="live-hero__open" href={view.src} target="_blank" rel="noreferrer">
           {t(ui.workscape.liveOpen)}
         </a>
       </div>
       <div className="live-hero__stage">
-        <iframe key={view.id} className="live-hero__frame" src={view.src} title={`${t(preview.title)} — ${t(view.label)}`} allow="clipboard-write" />
+        <iframe key={view.id} className="live-hero__frame" src={`${view.src}&embed=1`} title={`${t(preview.title)} — ${t(view.label)}`} allow="clipboard-write" />
       </div>
       <p className="live-hero__note">{t(view.note)}</p>
       <div className="live-hero__still">
