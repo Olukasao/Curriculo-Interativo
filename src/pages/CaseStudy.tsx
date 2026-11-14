@@ -165,6 +165,14 @@ function CaseStudyView({ slug }: { slug: string }) {
         </section>
       )}
 
+      {slug === "workspace-3d" && (
+        <section className="case__demo wrap">
+          <Link to="/work/workspace-3d/live" className="btn btn--solid">
+            {t(ui.workspace3d.liveCta)}
+          </Link>
+        </section>
+      )}
+
       {slug === "workscape" && !demoAsHero && (
         <section className="case__demo wrap" aria-labelledby="demo-title">
           <h2 id="demo-title" className="label">

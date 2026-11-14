@@ -81,6 +81,11 @@ export const ui = {
       title: { pt: "Central do Assinante", en: "Subscriber app" },
       line: { pt: "O app do cliente: fatura, plano, chamados e atendimento, num quadro de celular.", en: "The customer app: bill, plan, tickets and support, in a phone frame." },
     },
+    workspace3d: {
+      kind: { pt: "Escritório virtual", en: "Virtual office" },
+      title: { pt: "Workspace 3D", en: "Workspace 3D" },
+      line: { pt: "Um escritório que vive sozinho, em 3D e em 2D: a equipe trabalha, anda, toma café e conversa.", en: "An office that lives on its own, in 3D and 2D: the team works, walks, grabs coffee and chats." },
+    },
   },
   workscape: {
     schematic: {
@@ -107,6 +112,9 @@ export const ui = {
     visit: { pt: "Visitar acessanet.com.br", en: "Visit acessanet.com.br" },
     liveCta: { pt: "Ver o site e o app funcionando", en: "See the site and app running" },
     dragHint: { pt: "Arraste para o lado", en: "Swipe sideways" },
+  },
+  workspace3d: {
+    liveCta: { pt: "Abrir o Workspace 3D funcionando", en: "Open Workspace 3D running" },
   },
   kollect: {
     rule: { pt: "O mascote é intocável. Só o O de WORLD muda.", en: "The mascot is untouchable. Only the O in WORLD changes." },

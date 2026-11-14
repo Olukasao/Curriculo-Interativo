@@ -6,6 +6,7 @@ import "./LiveDemos.css";
 const demos = [
   { to: "/work/chat-interno/live", key: "chat" },
   { to: "/work/agenda-tecnicos/live", key: "agenda" },
+  { to: "/work/workspace-3d/live", key: "workspace3d" },
   { to: "/work/workscape/live", key: "workscape" },
   { to: "/work/acessanet/live", key: "site" },
   { to: "/work/acessanet/live?view=app", key: "app" },

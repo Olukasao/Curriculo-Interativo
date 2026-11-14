@@ -293,15 +293,15 @@ export const projects: Project[] = [
     ],
     tone: { ink: "#8AB4FF", field: "#060A14" },
     hero: {
-      kind: "video",
-      slug: "workspace-3d-3d",
+      kind: "image",
+      src: "/media/workspace-3d-3d/poster.webp",
       aspect: "16/9",
       alt: { pt: "Workspace 3D no modo 3D: câmera orbitando o escritório com mesas, avatares sentados e a lista de postos", en: "Workspace 3D in 3D mode: the camera orbiting the office with desks, seated avatars and the station list" },
     },
     gallery: [
       {
-        kind: "video",
-        slug: "workspace-3d-2d",
+        kind: "image",
+        src: "/media/workspace-3d-2d/poster.webp",
         aspect: "16/9",
         alt: { pt: "Workspace 3D no modo 2D em pixel art: a equipe nas mesas, andando pelo mapa e a TV do atendimento com a equipe ao vivo", en: "Workspace 3D in pixel-art 2D mode: the team at their desks, walking the map and the support TV showing the live team" },
       },

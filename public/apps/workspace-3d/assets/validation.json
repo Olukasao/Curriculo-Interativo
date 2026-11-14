@@ -1,0 +1,324 @@
+{
+  "validator": "gltf-validator 2.0.0-dev.3.10",
+  "checkedAt": "2026-11-12T13:21:52.232Z",
+  "models": 52,
+  "errors": 0,
+  "warnings": 4,
+  "problems": 0,
+  "results": [
+    {
+      "slug": "cadeira-escritorio",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "cadeira-executiva",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "sofa-recepcao",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "copiadora",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "impressora-mesa",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "monitor",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "desktop-torre",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "notebook",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "teclado",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "mouse",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "telefone",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "tv-parede",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "tv-pedestal",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "rack-servidor",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "gaveteiro",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "armario-baixo",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "estante-baixa",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "estante-livros",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "mesa-redonda",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "mesa-madeira",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "mesa-centro",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "planta-vaso-vermelho",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "planta-folhagem",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "luminaria-piso",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "luminaria-mesa",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "lixeira",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "quadro-arte",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "porta-retrato",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "relogio-parede",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "quadro-branco",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "placa-saida",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "livros",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "caixas",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "bebedouro",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "kn-mesa",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "kn-mesa-canto",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "kn-cadeira",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "kn-poltrona",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "kn-estante-aberta",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "kn-criado-gavetas",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "kn-cafeteira",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "kn-luminaria",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "kn-tapete",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "kn-mesa-centro",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "ph-planta",
+      "errors": 0,
+      "warnings": 4,
+      "warningCodes": [
+        "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE"
+      ]
+    },
+    {
+      "slug": "mesa-reta",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "mesa-reuniao",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "bancada-recepcao",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "tv-painel",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "divisoria-baixa",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "placa-sala",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    },
+    {
+      "slug": "caixa-organizadora",
+      "errors": 0,
+      "warnings": 0,
+      "warningCodes": []
+    }
+  ]
+}

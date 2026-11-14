@@ -1,0 +1,1 @@
+Miniaturas próprias, geradas por tools/assets/thumbs.mjs a partir dos GLB distribuídos.

@@ -110,4 +110,28 @@ export const previews: Record<string, Preview> = {
       },
     ],
   },
+  "workspace-3d": {
+    title: { pt: "Workspace 3D — escritório vivo", en: "Workspace 3D — living office" },
+    back: "/#demos",
+    views: [
+      {
+        id: "3d",
+        label: { pt: "Escritório 3D", en: "3D office" },
+        src: "/apps/workspace-3d/index.html?auto=3d",
+        note: {
+          pt: "O app real rodando no navegador, sem servidor: a equipe trabalha, levanta, anda até a copa, a impressora e a sala de reunião, conversa e volta para a mesa. Arraste para girar; clique numa mesa, impressora ou TV.",
+          en: "The real app running in your browser, no server: the team works, gets up, walks to the kitchen, printer and meeting room, chats and returns to their desk. Drag to orbit; click a desk, printer or TV.",
+        },
+      },
+      {
+        id: "2d",
+        label: { pt: "Escritório 2D", en: "2D office" },
+        src: "/apps/workspace-3d/index.html?auto=2d",
+        note: {
+          pt: "O mesmo escritório em pixel art. Você controla a Aline (WASD ou clique); o resto da equipe segue vivendo. Clique numa pessoa, na TV ou na impressora.",
+          en: "The same office in pixel art. You control Aline (WASD or click); the rest of the team keeps living. Click a person, the TV or the printer.",
+        },
+      },
+    ],
+  },
 };
