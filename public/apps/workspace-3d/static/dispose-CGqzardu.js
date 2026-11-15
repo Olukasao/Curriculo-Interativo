@@ -1,1 +1,0 @@
-import{d as s,c as e,e as o}from"./assetCache-B890ffra.js";import"./three-CXHr6ijY.js";import"./index-CWFT-h2_.js";import"./vendor-hburc8cb.js";function p(){s(),e(),o(),delete window.__office3d}export{p as disposeThreeWorld};
