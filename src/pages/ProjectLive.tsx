@@ -17,6 +17,9 @@ export default function ProjectLive() {
   useDocumentTitle(preview ? t(preview.title) : undefined);
   if (!preview) return <NotFound />;
   const view = preview.views.find((v) => v.id === viewId) ?? preview.views[0];
+  // the Workspace 3D app has a map-only touch layout for narrow screens
+  const phone = typeof window !== "undefined" && window.matchMedia("(max-width: 47.99rem)").matches;
+  const src = phone && view.src.includes("/apps/workspace-3d/") ? `${view.src}&compact=1` : view.src;
 
   return (
     <div className="plive">
@@ -42,10 +45,10 @@ export default function ProjectLive() {
       <main id="main" className={`plive__stage${view.phone ? " plive__stage--phone" : ""}`}>
         {view.phone ? (
           <div className="plive__phone">
-            <iframe key={view.id} className="plive__frame" src={view.src} title={`${t(preview.title)} — ${t(view.label)}`} allow="clipboard-write" />
+            <iframe key={view.id} className="plive__frame" src={src} title={`${t(preview.title)} — ${t(view.label)}`} allow="clipboard-write" />
           </div>
         ) : (
-          <iframe key={view.id} className="plive__frame" src={view.src} title={`${t(preview.title)} — ${t(view.label)}`} allow="clipboard-write" />
+          <iframe key={view.id} className="plive__frame" src={src} title={`${t(preview.title)} — ${t(view.label)}`} allow="clipboard-write" />
         )}
       </main>
     </div>

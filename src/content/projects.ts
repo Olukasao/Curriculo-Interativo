@@ -301,9 +301,45 @@ export const projects: Project[] = [
     gallery: [
       {
         kind: "image",
-        src: "/media/workspace-3d-2d/poster.webp",
+        src: "/media/workspace-3d/mesa.webp",
         aspect: "16/9",
-        alt: { pt: "Workspace 3D no modo 2D em pixel art: a equipe nas mesas, andando pelo mapa e a TV do atendimento com a equipe ao vivo", en: "Workspace 3D in pixel-art 2D mode: the team at their desks, walking the map and the support TV showing the live team" },
+        alt: { pt: "Modo 3D: clicar numa mesa mostra quem está ali, o ramal, a presença e as ações permitidas para o seu perfil.", en: "3D mode: clicking a desk shows who is there, the extension, presence and the actions your role allows." },
+      },
+      {
+        kind: "image",
+        src: "/media/workspace-3d/chat.webp",
+        aspect: "16/9",
+        alt: { pt: "Chat aberto direto do mapa: o colega responde, e avisa quando está em atendimento.", en: "Chat opened straight from the map: the colleague replies, and says when they are on a call." },
+      },
+      {
+        kind: "image",
+        src: "/media/workspace-3d/planta.webp",
+        aspect: "16/9",
+        alt: { pt: "Vista de planta: a mesma cena em projeção ortogonal, com os avatares nas mesas.", en: "Plan view: the same scene in orthographic projection, with avatars at their desks." },
+      },
+      {
+        kind: "image",
+        src: "/media/workspace-3d/editor.webp",
+        aspect: "16/9",
+        alt: { pt: "Editor do andar: catálogo de modelos, ferramentas de piso, parede, porta e janela, rascunho e publicação.", en: "Floor editor: model catalog, floor, wall, door and window tools, drafts and publishing." },
+      },
+      {
+        kind: "image",
+        src: "/media/workspace-3d/tv-2d.webp",
+        aspect: "16/9",
+        alt: { pt: "Modo 2D: a TV do atendimento mostra a equipe ao vivo, com quem está livre, em atendimento ou ausente.", en: "2D mode: the support TV shows the live team: who is free, on a call or away." },
+      },
+      {
+        kind: "image",
+        src: "/media/workspace-3d/impressora-2d.webp",
+        aspect: "16/9",
+        alt: { pt: "Modo 2D: ao clicar na impressora, escolhe-se a da fila e envia-se o PDF.", en: "2D mode: clicking the printer lets you pick a queue and send the PDF." },
+      },
+      {
+        kind: "image",
+        src: "/media/workspace-3d/avatar-2d.webp",
+        aspect: "16/9",
+        alt: { pt: "Editor de avatar em pixel art: corpo, cabelo, roupas, chapéus e acessórios em camadas.", en: "Pixel-art avatar editor: body, hair, clothes, hats and accessories in layers." },
       },
     ],
     links: [{ label: { pt: "Código no GitHub", en: "Code on GitHub" }, href: "https://github.com/Olukasao/Workspace-3d" }],

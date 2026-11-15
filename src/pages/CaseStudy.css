@@ -116,16 +116,28 @@
   font-size: var(--t-sm);
   opacity: 0.75;
 }
-.live-hero__still {
+.live-hero__touch {
   display: none;
+  margin-top: var(--s-2);
+  font-size: var(--t-sm);
+  opacity: 0.75;
 }
 @media (max-width: 47.99rem) {
-  .live-hero__bar,
-  .live-hero__stage,
-  .live-hero > .live-hero__note {
+  .live-hero__stage {
+    aspect-ratio: 3 / 4;
+    max-height: 78svh;
+  }
+  .live-hero__label,
+  .live-hero > .live-hero__note,
+  .live-hero__open {
     display: none;
   }
-  .live-hero__still {
+  .live-hero__tab {
+    min-width: 6.4rem;
+    min-height: 3rem;
+    font-size: 1.25rem;
+  }
+  .live-hero__touch {
     display: block;
   }
 }

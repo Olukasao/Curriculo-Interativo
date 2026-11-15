@@ -78,7 +78,10 @@ function LiveLoader({ steps }: { steps: string[] }) {
 function LiveHero({ hero }: { hero: Parameters<typeof Media>[0]["media"] }) {
   const { t } = useI18n();
   const preview = previews["workspace-3d"];
-  const [id, setId] = useState(preview.views[0].id);
+  const mq = "(max-width: 47.99rem)";
+  const [narrow, setNarrow] = useState(() => typeof window !== "undefined" && window.matchMedia(mq).matches);
+  // phones start in the light 2D office (a few MB); the heavy 3D models only download if they ask for 3D
+  const [id, setId] = useState(() => (typeof window !== "undefined" && window.matchMedia(mq).matches ? "2d" : preview.views[0].id));
   const [touched, setTouched] = useState(false);
   const [near, setNear] = useState(false);
   const [ready, setReady] = useState(false);
@@ -113,6 +116,13 @@ function LiveHero({ hero }: { hero: Parameters<typeof Media>[0]["media"] }) {
     io.observe(el);
     return () => io.disconnect();
   }, [near]);
+
+  useEffect(() => {
+    const m = window.matchMedia(mq);
+    const on = () => setNarrow(m.matches);
+    m.addEventListener("change", on);
+    return () => m.removeEventListener("change", on);
+  }, []);
 
   // readiness + the zoom wheel handed back by the embedded app, so the page keeps scrolling
   useEffect(() => {
@@ -170,7 +180,7 @@ function LiveHero({ hero }: { hero: Parameters<typeof Media>[0]["media"] }) {
         </a>
       </div>
       <div className="live-hero__stage">
-        {running && <iframe key={`${view.id}-${attempt}`} ref={frame} className="live-hero__frame" src={`${view.src}&embed=1`} title={`${t(preview.title)} — ${t(view.label)}`} allow="clipboard-write" />}
+        {running && <iframe key={`${view.id}-${attempt}`} ref={frame} className="live-hero__frame" src={`${view.src}&embed=1${narrow ? "&compact=1" : ""}`} title={`${t(preview.title)} — ${t(view.label)}`} allow="clipboard-write" />}
         <div className={`live-hero__veil${running && ready ? " is-hidden" : ""}`} aria-hidden={running && ready}>
           {still && <img className="live-hero__veil-img" src={still} alt="" />}
           <div className="live-hero__veil-shade" />
@@ -211,10 +221,12 @@ function LiveHero({ hero }: { hero: Parameters<typeof Media>[0]["media"] }) {
         </div>
       </div>
       <p className="live-hero__note">{t(view.note)}</p>
-      <div className="live-hero__still">
-        <Media media={hero} mode="inview" eager />
-        <p className="live-hero__note">{t({ pt: "O Workspace 3D é um app de desktop: a demonstração viva funciona melhor numa tela maior.", en: "Workspace 3D is a desktop app: the live demo works best on a larger screen." })}</p>
-      </div>
+      <p className="live-hero__touch">
+        {view.id === "3d"
+          ? t({ pt: "Toque num objeto para ver as opções; arraste para girar e use dois dedos para aproximar. Para continuar rolando a página, deslize fora do quadro.", en: "Tap an object for its options; drag to orbit and pinch to zoom. To keep scrolling the page, swipe outside the frame." })
+          : t({ pt: "Toque no chão para andar, ou numa pessoa, TV ou impressora. Use + e − para o zoom. Para continuar rolando a página, deslize fora do quadro.", en: "Tap the floor to walk, or a person, TV or printer. Use + and − to zoom. To keep scrolling the page, swipe outside the frame." })}
+        {narrow && view.id === "3d" ? " " + t({ pt: "O 3D baixa cerca de 60 MB.", en: "3D downloads about 60 MB." }) : ""}
+      </p>
     </div>
   );
 }
